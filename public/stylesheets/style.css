@@ -1,0 +1,164 @@
+/** Copyright 2015-2016, Google, Inc.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+body {
+  /*padding: 10px 40px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#home {
+	margin-left: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+input::-webkit-input-placeholder {
+color: #E0E0E0 !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: #E0E0E0 !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #E0E0E0 !important;
+}
+
+input:-ms-input-placeholder {
+color: #E0E0E0 !important;
+}
+
+
+.mdl-layout__header, .mdl-layout__header-row {
+	background-color: #C2185B;
+}
+
+button#search {
+	/*color: white;*/
+	background-color: #BDBDBD;
+}
+
+button#annotation-btn {
+	background-color: #2196F3;
+	color: white;
+}
+
+h1 {
+	font-size: 45px;
+}
+
+svg {
+	display: block;
+	margin: 0 auto;
+	padding-right: 260px;
+}
+
+#search-term {
+	width: 300px;
+	padding: 5px;
+	display: inline-block;
+	margin-right: 30px;
+	font-family: "Roboto"
+}
+
+#annotation-btn {
+	display: none;
+}
+
+#graph {
+	/*margin-top: 20px;*/
+}
+
+#status {
+	margin: 20px;
+}
+
+.error {
+	color: red;
+}
+
+.mdl-spinner {
+	display: hidden;
+	/*width: 40px;*/
+	margin-left: 20px;
+	/*margin-bottom: -10px;*/
+	margin-top: -5px;
+}
+
+.dot {
+	cursor: pointer;
+}
+
+div.tooltip {
+	position: absolute;
+    text-align: center;			
+/*    width: 60px;					
+    height: 28px;	*/				
+    padding: 4px;				
+    font-size: 12px sans-serif;		
+    background: #E0E0E0;	
+    border: 0px;		
+    border-radius: 3px;			
+    z-index: 100;
+    /*pointer-events: none;		*/
+}
+
+#top-annotations {
+	font-weight: bold;
+	/*margin-top: 20px;*/
+	font-family: "Roboto", "Helvetica";
+	text-align: center;
+	margin: 30px 0px;
+}
+
+#video video {
+	/*max-width: 500px;*/
+	/*max-height: 400px;*/
+	/*margin-top: 20px;*/
+	/*display: block;*/
+	margin: 0 auto;
+	padding-top: 25px;
+}
+
+#video {
+	padding: 20px;
+	/*margin: 0 auto;*/
+}
+
+.small-video {
+	max-width: 300px;
+	max-height: 300px;
+	padding: 20px;
+}
+
+.second {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.show-video {
+	max-width: 500px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+
+.search-video {
+	max-width: 300px;
+	/*display: block;*/
+	padding: 30px;
+}

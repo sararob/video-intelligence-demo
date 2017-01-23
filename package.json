@@ -1,0 +1,31 @@
+{
+  "name": "appengine-express",
+  "description": "An example of running Express.js on Google App Engine.",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "cd ..; npm run t -- appengine/analytics/test/*.test.js"
+  },
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "cookie-parser": "1.4.3",
+    "cors": "^2.8.1",
+    "d3": "^4.4.3",
+    "debug": "2.3.2",
+    "express": "4.14.0",
+    "express-resource": "^1.0.0",
+    "google-cloud": "^0.45.1",
+    "morgan": "1.7.0",
+    "node-base64-image": "^1.0.3",
+    "pug": "2.0.0-beta6",
+    "recordrtc-nodejs": "^1.0.1",
+    "request": "^2.79.0",
+    "serve-favicon": "2.3.0"
+  }
+}

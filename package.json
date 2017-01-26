@@ -19,7 +19,6 @@
     "d3": "^4.4.3",
     "debug": "2.3.2",
     "express": "4.14.0",
-    "express-resource": "^1.0.0",
     "google-cloud": "^0.45.1",
     "morgan": "1.7.0",
     "node-base64-image": "^1.0.3",

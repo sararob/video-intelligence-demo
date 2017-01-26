@@ -1,5 +1,3 @@
-var d3CustomColors = ["#d27951", "#2dad06", "#8cb64a", "#c40db3", "#9a601e", "#fb731d", "#e2948b", "#479d53", "#a8ac7e", "#df773a", "#447b02", "#a2577e", "#4b83fd", "#f23dbe", "#f364b7", "#d88c4f", "#6c713d", "#6d8bb4", "#479b36", "#ad8132", "#5e97e7", "#c59ac9", "#b64a44", "#f88d2e", "#e04339", "#de4e6a", "#367680", "#f5603a", "#cb6ce7", "#ae9ded", "#d00a83", "#0f7f22", "#af5222", "#888f91", "#62b2d5", "#a4b105", "#fd76a5", "#79b870", "#09bda9"];
-
 
 function renderVideo(id, link) {
 	$('<a href="/video/' +  id + '"><video class="small-video" id="' + id + '" controls src="' + link + '"></video></a>').appendTo('#video');
@@ -21,10 +19,11 @@ $(document).ready(function() {
 		},
 		success: function(msg, status, xhr) {
 			var fileArray = xhr.responseJSON;
-			console.log(fileArray);
+			// console.log(fileArray);
 			videoData = fileArray;
 			for (var i in fileArray) {
 				var video = fileArray[i];
+				// console.log(video);
 				renderVideo(video.url_safe_id, video.link);
 			}
 		}
@@ -52,15 +51,15 @@ $(document).ready(function() {
 	        data: {url: url},
 	        success: function(msg, status, jqXHR) {
 	        	var data = jqXHR.responseJSON;
-	        	// console.log(data);
 	        	var timeObj = [];
 	        	var videoAnnotations = {};
 	        	var annotations = data['response']['results'][0]['annotations'];
-	        	// console.log(data['response']);
+
 	        	console.log(annotations);
+
 	        	for (var i in annotations) {
 	        		var annotation = annotations[i];
-	        		// console.log(annotation);
+
 	        		if ((annotation['timeOffset']) && (annotation['timeOffset'] != -1)) {
 	        			timeObj.push({
 	        				name: annotation['description'],
@@ -72,7 +71,6 @@ $(document).ready(function() {
 	        			videoAnnotations[annotation['description']] = annotation['confidence'];
 	        		}
 	        	}
-	        	// console.log(videoAnnotations);
 
 	        	var topAnnotations = [];
 	        	for (var j in videoAnnotations) {
@@ -112,6 +110,15 @@ $(document).ready(function() {
 		});
 	});
 
+	$('.second').on('click', function(e) {
+		// TODO: change the video's currentTime
+		var vid = e.currentTarget.parentElement.childNodes[0].children[0];
+		console.log(e);
+		var sec = parseInt(e.target.textContent);
+		vid.currentTime = sec | 0;
+
+	});
+
 });
 
 function validateGCSUri(url) {
@@ -121,6 +128,8 @@ function validateGCSUri(url) {
 		return;
 	}
 }
+
+var d3CustomColors = ["#d27951", "#2dad06", "#8cb64a", "#c40db3", "#9a601e", "#fb731d", "#e2948b", "#479d53", "#a8ac7e", "#df773a", "#447b02", "#a2577e", "#4b83fd", "#f23dbe", "#f364b7", "#d88c4f", "#6c713d", "#6d8bb4", "#479b36", "#ad8132", "#5e97e7", "#c59ac9", "#b64a44", "#f88d2e", "#e04339", "#de4e6a", "#367680", "#f5603a", "#cb6ce7", "#ae9ded", "#d00a83", "#0f7f22", "#af5222", "#888f91", "#62b2d5", "#a4b105", "#fd76a5", "#79b870", "#09bda9"];
 
 function maked3graph(data) {
 	console.log(data);

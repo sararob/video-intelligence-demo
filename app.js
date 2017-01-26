@@ -25,7 +25,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const request = require('request');
 const http = require('http');
-// const resource = require('express-resource');
 
 const gcloud = require('google-cloud');
 const datastore = gcloud.datastore({
@@ -42,7 +41,6 @@ app.enable('trust proxy');
 // [END setup]
 
 const port = normalizePort(process.env.PORT || 3000);
-// const ip = process.env.OPENSHIFT_NODEDIY_IP || localhost;
 app.set('port', port);
 const server = http.createServer(app);
 
@@ -73,23 +71,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
-// app.use('/users', require('./routes/users'));
 app.use('/video', require('./routes/video'));
-// app.use('/search', require('./routes/search'));
-// app.resource('videos', require('./videos'));
 
 app.use(cors());
 
 var videoData;
 
 app.get('/getVideos', function(req, res) {
-  // console.log(req.params);
   var bucket = storage.bucket('keynote-videos');
   bucket.getFiles(function(err, files) {
     if (!err) {
       var fileArray = [];
       files.forEach(function(file, index) {
-        // TODO: make sure it's a video file
+
         var file = files[index];
         var key = datastore.key([file.metadata.bucket, file.metadata.name]);
 
@@ -117,54 +111,41 @@ app.get('/getVideos', function(req, res) {
   });
 });
 
-app.use('/video/:id', function(req, res, next) {
-  // console.log('hey', req.method);
-  next();
-});
-
 app.get('/video/:id', function(req, res) {
-  // res.send('video');
   var vidId = req.params.id;
   var link;
+  var annotations;
   for (var i in videoData) {
     var vid = videoData[i];
+    // console.log(i);
     if (vid['url_safe_id'] == vidId) {
       link = vid['link'];
     }
   }
-  // res.send({link: link});
-  res.render('video', {link: link});
+  // TODO make the d3 graph and pass it to the client
+
+  res.render('video', {link: link, annotations: annotations});
 });
 
 
 app.get('/search/:term?', function(req, res) {
-  // console.log(req.query.term);
   var term = req.query.term.toLowerCase();
   var matchingVids = [];
-  // console.log(term);
-  // console.log(videoData);
+
 
   for (var i in videoData) {
     var video = videoData[i];
-    // console.log(video.name);
     var annotations = video.annotations[0]['annotations'];
     var match = {
       'name': video['url_safe_id'],
       'link': video['link'],
       'seconds': []
     }
-    // console.log(JSON.stringify(annotations));
     annotations.forEach(function(annotation, index) {
       var name = annotation['description'].toLowerCase();
       if ((name == term) && (annotation['timeOffset'] != -1) && (annotation['timeOffset'])) { // It's a match! Add it
         var millisecond = annotation['timeOffset'] / 1000;
         match['seconds'].push(millisecond);
-        // if (matchingVids[video.link]) {
-        //   matchingVids[video.link].push(millisecond);
-        // } else {
-        //   matchingVids[video.link] = [millisecond];
-        //   matchingVids['name'] = video.url_safe_id;
-        // }
       }
     });
     if (match['seconds'].length != 0) {
@@ -172,20 +153,7 @@ app.get('/search/:term?', function(req, res) {
     }
   }
 
-  // // Add ID to matching videos
-  // for (var i in matchingVids) {
-  //   var matchedVid = matchingVids[i];
-  //   console.log(matchedVid);
-  // }
-  // for (var index in matchingVids) {
-  //   var matchingVid = matchingVids[index];
-  //   console.log(matchingVid.seconds.length);
-  //   if (matchingVid.seconds.length === 0) {
-  //     matchingVids.splice(index, 1);
-  //   }
-  // }
-  console.log(matchingVids);
-  res.render('search', {vids: matchingVids, title: 'hey'});
+  res.render('search', {vids: matchingVids, term: term});
 });
 
 // Moved this to a Cloud Function

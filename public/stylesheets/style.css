@@ -53,20 +53,10 @@ button#search {
 	background-color: #BDBDBD;
 }
 
-button#annotation-btn {
-	background-color: #2196F3;
-	color: white;
-}
-
-h1 {
+/*h1 {
 	font-size: 45px;
-}
+}*/
 
-svg {
-	display: block;
-	margin: 0 auto;
-	padding-right: 260px;
-}
 
 #search-term {
 	width: 300px;
@@ -80,10 +70,6 @@ svg {
 	display: none;
 }
 
-#graph {
-	/*margin-top: 20px;*/
-}
-
 #status {
 	margin: 20px;
 }
@@ -94,50 +80,17 @@ svg {
 
 .mdl-spinner {
 	display: hidden;
-	/*width: 40px;*/
 	margin-left: 20px;
-	/*margin-bottom: -10px;*/
 	margin-top: -5px;
 }
 
-.dot {
-	cursor: pointer;
-}
-
-div.tooltip {
-	position: absolute;
-    text-align: center;			
-/*    width: 60px;					
-    height: 28px;	*/				
-    padding: 4px;				
-    font-size: 12px sans-serif;		
-    background: #E0E0E0;	
-    border: 0px;		
-    border-radius: 3px;			
-    z-index: 100;
-    /*pointer-events: none;		*/
-}
-
-#top-annotations {
-	font-weight: bold;
-	/*margin-top: 20px;*/
-	font-family: "Roboto", "Helvetica";
-	text-align: center;
-	margin: 30px 0px;
-}
-
 #video video {
-	/*max-width: 500px;*/
-	/*max-height: 400px;*/
-	/*margin-top: 20px;*/
-	/*display: block;*/
 	margin: 0 auto;
 	padding-top: 25px;
 }
 
 #video {
 	padding: 20px;
-	/*margin: 0 auto;*/
 }
 
 .small-video {
@@ -159,6 +112,48 @@ div.tooltip {
 
 .search-video {
 	max-width: 300px;
-	/*display: block;*/
 	padding: 30px;
 }
+
+#no-videos {
+	margin: 20px;
+}
+
+#term-display {
+	margin: 30px 0px 0px 30px;
+}
+
+#term-display span {
+	font-weight: bold;
+}
+
+/*For the d3 graph, currently haven't implemented it yet, but it'll go on the video show page */
+/*
+.dot {
+	cursor: pointer;
+}
+
+
+svg {
+	display: block;
+	margin: 0 auto;
+	padding-right: 260px;
+}
+
+div.tooltip {
+	position: absolute;
+    text-align: center;					
+    padding: 4px;				
+    font-size: 12px sans-serif;		
+    background: #E0E0E0;	
+    border: 0px;		
+    border-radius: 3px;			
+    z-index: 100;
+}
+
+#top-annotations {
+	font-weight: bold;
+	font-family: "Roboto", "Helvetica";
+	text-align: center;
+	margin: 30px 0px;
+}*/

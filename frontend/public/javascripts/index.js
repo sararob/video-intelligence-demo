@@ -21,6 +21,7 @@ $(document).ready(function() {
 			var fileArray = xhr.responseJSON;
 			// console.log(fileArray);
 			videoData = fileArray;
+			console.log(fileArray);
 			for (var i in fileArray) {
 				var video = fileArray[i];
 				// console.log(video);

@@ -127,6 +127,20 @@ button#search {
 	font-weight: bold;
 }
 
+.label-results {
+	margin: 50px 0px 0px 200px;
+}
+
+.label {
+	margin-bottom: 8px;
+}
+
+.time-range-diplsay {
+	margin-right: 10px;
+}
+
+
+
 /*For the d3 graph, currently haven't implemented it yet, but it'll go on the video show page */
 /*
 .dot {

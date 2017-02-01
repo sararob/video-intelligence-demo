@@ -113,17 +113,17 @@ app.get('/getVideos', function(req, res) {
 app.get('/video/:id', function(req, res) {
   var vidId = req.params.id;
   var link;
-  var annotations;
+  var labelAnnotations
   for (var i in videoData) {
     var vid = videoData[i];
-    // console.log(i);
+    // console.log(vid);
     if (vid['url_safe_id'] == vidId) {
       link = vid['link'];
+      labelAnnotations = vid['annotations']['v1beta1']['annotation_results'][0]['label_annotations'];
+      console.log(labelAnnotations);
     }
   }
-  // TODO make the d3 graph and pass it to the client
-
-  res.render('video', {link: link, annotations: annotations});
+  res.render('video', {link: link, labelAnnotations: labelAnnotations});
 });
 
 

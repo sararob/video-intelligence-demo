@@ -2,3 +2,12 @@ extends layout
 
 block content
 	video.show-video(controls src=link)
+	div.label-results
+		each label in labelAnnotations
+			div.label
+				span=label['description']
+				each segment in label['locations']
+					//- TODO - maybe only display labels with a high enough confidence - segment['confidence']
+					if segment['segment']['start_time_offset'] != -1
+						//- TODO - display the time this label shows up
+						//- span.time-range-display=(segment['segment']['start_time_offset'])

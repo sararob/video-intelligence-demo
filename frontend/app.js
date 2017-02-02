@@ -104,6 +104,8 @@ app.get('/getVideos', function(req, res) {
           }
         });
       });
+
+      // console.log(videoData);
     } else {
       console.log('GCS error getting files', err);
     }
@@ -113,17 +115,20 @@ app.get('/getVideos', function(req, res) {
 app.get('/video/:id', function(req, res) {
   var vidId = req.params.id;
   var link;
-  var labelAnnotations
+  var labelAnnotations, faceAnnotations;
+  var id;
   for (var i in videoData) {
     var vid = videoData[i];
-    // console.log(vid);
     if (vid['url_safe_id'] == vidId) {
       link = vid['link'];
-      labelAnnotations = vid['annotations']['v1beta1']['annotation_results'][0]['label_annotations'];
-      console.log(labelAnnotations);
+      id = vid['url_safe_id']
+      var annotations = vid['annotations']['annotation_results'][0];
+      var labelAnnotations = annotations['label_annotations'];
+      var faceAnnotations = annotations['face_annotations'];
     }
   }
-  res.render('video', {link: link, labelAnnotations: labelAnnotations});
+  // res.send(labelAnnotations, faceAnnotations);
+  res.render('video', {link: link, labelAnnotations: labelAnnotations, faceAnnotations: faceAnnotations, id: id});
 });
 
 
@@ -134,6 +139,8 @@ app.get('/search/:term?', function(req, res) {
 
   for (var i in videoData) {
     var video = videoData[i];
+    var vidAnnotations = video['annotations']['annotation_results'];
+    // console.log(vidAnnotations);
 
     var match = {
       'name': video['url_safe_id'],
@@ -141,8 +148,10 @@ app.get('/search/:term?', function(req, res) {
       'seconds': []
     }
 
-    var vidAnnotations = video['annotations']['v1beta1']['annotation_results'][0];
-    var labelAnnotations = vidAnnotations['label_annotations'];
+    // var vidAnnotations = video['annotations']['v1beta1']['annotation_results'][0];
+    var labelAnnotations = vidAnnotations[0]['label_annotations'];
+
+
     for (var j in labelAnnotations) {
       var label = labelAnnotations[j];
       // console.log(label);
@@ -152,6 +161,7 @@ app.get('/search/:term?', function(req, res) {
         if (description.toLowerCase() == term) {
           // Get the time
           var locations = label['locations'];
+          // console.log(locations);
           for (var k in locations) {
             var segment = locations[k];
             var startTime = segment['segment']['start_time_offset'];
@@ -162,6 +172,8 @@ app.get('/search/:term?', function(req, res) {
             }
           }
         }
+      } else {
+        console.log('no_description', label);
       }
 
     }

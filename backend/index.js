@@ -50,7 +50,7 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
             "gcsInputUri": videoFilename,
             "gcsOutputUri": "gs://video-json-output/" + fileName.replace(".", "").replace("/", "") + ".json",
             'spec': {
-              'annotationTypes': ['LABEL_DETECTION'] //todo - figure out what's wrong with this request (doesn't work w/ multiple detection types)
+              'annotationTypes': ['LABEL_DETECTION', 'FACE_DETECTION', 'SHOT_CHANGE_DETECTION']
             }
           }
         }

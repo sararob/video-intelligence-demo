@@ -139,6 +139,10 @@ button#search {
 	margin-right: 10px;
 }
 
+.label-graph {
+	margin: 0 auto;
+}
+
 
 
 /*For the d3 graph, currently haven't implemented it yet, but it'll go on the video show page */

@@ -143,6 +143,15 @@ button#search {
 	margin: 0 auto;
 }
 
+.face {
+	margin: 10px 0px;
+}
+
+.face img {
+	width: 50px;
+	border-radius: 10px;
+}
+
 
 
 /*For the d3 graph, currently haven't implemented it yet, but it'll go on the video show page */

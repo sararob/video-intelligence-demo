@@ -38,6 +38,8 @@ $(document).ready(function() {
 				var video = fileArray[i];
 				// console.log(video);
 				maked3graph(video['annotations']['annotation_results'][0]['label_annotations'], video.url_safe_id);
+				var faceAnnotations = video['annotations']['annotation_results'][0]['face_annotations'];
+				renderFaces(faceAnnotations, video.url_safe_id);
 				renderVideo(video.url_safe_id, video.link);
 			}
 		}
@@ -75,7 +77,6 @@ function maked3graph(data, div) {
 			// console.log(segment);
 			var startTime = segment['segment']['start_time_offset'] / 1000000 || 0;
 			var endTime = segment['segment']['end_time_offset'] / 1000000;
-			console.log(startTime.toString().toHHMMSS());
 			timeArr.push(["2017-01-02 " + startTime.toString().toHHMMSS(), 1, "2017-01-02 " + endTime.toString().toHHMMSS()]);
 		}
 
@@ -88,4 +89,15 @@ function maked3graph(data, div) {
     d3.select("#" + div)
             .datum(dataset)
             .call(chart);
+}
+
+function renderFaces(faces, videoId) {
+	for (var i in faces) {
+		var face = faces[i];
+		var b64thumbnail = face['thumbnail'];
+		if (b64thumbnail) {
+			// decode it
+			$('<div class="face"><img src="data:image/jpeg;base64,' + b64thumbnail + '"/></div>').appendTo(('#' + videoId));
+		}
+	}
 }

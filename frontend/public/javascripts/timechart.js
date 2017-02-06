@@ -468,7 +468,7 @@ function visavailChart() {
           .append('text')
           .attr('x', paddingLeft)
           .attr('y', paddingTopHeading + 17)
-          .text(subtitleText)
+          // .text(subtitleText)
           .attr('class', 'subheading');
 
       // create legend

@@ -51,6 +51,13 @@ $(document).ready(function() {
 		window.location.replace(window.location.protocol + '//' + window.location.host + '/search?term=' + searchTerm);
 	});
 
+	$('.second').on('click', function(e) {
+		var vid = e.currentTarget.parentElement.childNodes[0].children[0];
+		console.log(e);
+		var sec = parseInt(e.target.textContent);
+		vid.currentTime = sec | 0;
+	});
+
 });
 
 function validateGCSUri(url) {

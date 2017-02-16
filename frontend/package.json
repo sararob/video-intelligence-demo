@@ -14,6 +14,11 @@
   },
   "dependencies": {
     "@google-cloud/storage": "^0.6.1",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "body-parser": "1.15.2",
     "cookie-parser": "1.4.3",
     "cors": "^2.8.1",
@@ -24,10 +29,13 @@
     "node-base64-image": "^1.0.3",
     "pug": "2.0.0-beta6",
     "request": "^2.79.0",
-    "serve-favicon": "2.3.0"
+    "serve-favicon": "2.3.0",
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0",
+    "webpack-stream": "^3.2.0"
   }
 }

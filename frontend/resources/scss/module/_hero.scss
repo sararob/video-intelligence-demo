@@ -1,0 +1,28 @@
+/*
+* Hero
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$hero: '.hero';
+$hero-height: 400px;
+
+
+/*
+* Class
+*
+*/
+
+#{$hero} {
+  height: $hero-height;
+}
+
+#{$hero}-video {
+  height: $hero-height;
+}

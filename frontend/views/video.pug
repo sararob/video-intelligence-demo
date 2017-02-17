@@ -1,8 +1,9 @@
 extends layout
 
 block content
-	video.show-video(controls src=link)
-	div.label-results
+	header.hero.has-sidebar.fill-subtle
+		video.hero-video.show-video(controls src=link)
+		div.label-results
 		//- each label in labelAnnotations
 		//- 	div.label
 		//- 		span=label['description']
@@ -11,6 +12,10 @@ block content
 		//- 			if segment['segment']['start_time_offset'] != -1
 						//- TODO - display the time this label shows up
 						//- span.time-range-display=(segment['segment']['start_time_offset'])
+	div.sheet.l-pad-2.clearfix
+		h3.text-title Name of video
+		h4.text-caption length: 2:23
+
 	div.label-graph(id=id)
 	div#example
 			//- div.face

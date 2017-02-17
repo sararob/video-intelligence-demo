@@ -1,4 +1,7 @@
-function visavailChart() {
+import d3 from 'd3';
+import moment from 'moment';
+
+const visavailChart = function() {
   // define chart layout
   var margin = {
     // top margin includes title and legend
@@ -538,4 +541,6 @@ function visavailChart() {
   };
 
   return chart;
-}
+};
+
+export default visavailChart;

@@ -46,9 +46,11 @@ $(document).ready(function() {
 	});
 
 
-	$('#search').on('click', function() {
-		var searchTerm = $('#search-term').val();
-		window.location.replace(window.location.protocol + '//' + window.location.host + '/search?term=' + searchTerm);
+	$('#search').on('keypress', function(e) {
+		if(e.which == 13) {
+      var searchTerm = $('#search').val();
+			window.location.replace(window.location.protocol + '//' + window.location.host + '/search?term=' + searchTerm);
+    }
 	});
 
 	$('.second').on('click', function(e) {

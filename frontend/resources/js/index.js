@@ -8,21 +8,22 @@ let videoStore;
 
 class App {
   constructor() {
-    const hasLocalStorage = store.enabled;
-    console.log(VIDEO_URL);
+    const videoData = store.enabled ? store.get('videos') : false;
 
-    if(hasLocalStorage) {
-      const videos = store.get('videos');
+    // REGISTER ELEMENTS
+    this.$stage = $('#stage');
+    this.$topnav = $('#top-nav');
 
-      if(videos) {
-        console.log(videos);
-      }
-      else {
-        this.getVideoData();
-      }
+    // RENDER LOADING SPINNER
+    this.renderLoadingIndicator();
+
+    // IF DATA EXISTS RUN APP
+    if(videoData) {
+      console.log(videoData);
     }
+    // OTHERWISE FETCH VIDEO DATA
     else {
-      console.log('no local storage avaialble');
+      this.getVideoData();
     }
   }
 
@@ -39,11 +40,19 @@ class App {
       },
 
       success(msg, status, xhr) {
-        var fileArray = xhr.responseJSON;
-        store.set('videos', fileArray);
+        const videos = xhr.responseJSON;
 
-        for (var i in fileArray) {
-          var video = fileArray[i];
+        // STORE VIDEO DATA
+        if(store.enabled) {
+          store.set('videos', videos);
+        }
+        else {
+          videoStore = videos;
+        }
+
+
+        for (var i in videos) {
+          var video = videos[i];
           // console.log(video);
           // maked3graph(video['annotations']['annotation_results'][0]['label_annotations'], video.url_safe_id);
           // var faceAnnotations = video['annotations']['annotation_results'][0]['face_annotations'];
@@ -52,6 +61,28 @@ class App {
         }
       }
     });
+
+
+  }
+
+  clearStage() {
+
+  }
+
+  renderLoadingIndicator() {
+    this.$stage.html('<h1>Loading One Moment...</h1>');
+  }
+
+  renderHomepage() {
+
+  }
+
+  renderSearchResults() {
+
+  }
+
+  renderDetailPage() {
+
   }
 }
 

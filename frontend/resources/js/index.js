@@ -2,6 +2,7 @@ import $ from 'jquery';
 import * as d3 from 'd3';
 import visavailChart from './timechart';
 import store from 'store'; //https://www.npmjs.com/package/store
+import navigo from 'navigo';
 
 const VIDEO_URL = window.location.protocol + '//' + window.location.host + '/getVideos';
 let videoStore;
@@ -15,11 +16,12 @@ class App {
     this.$topnav = $('#top-nav');
 
     // RENDER LOADING SPINNER
-    this.renderLoadingIndicator();
+    //this.renderLoadingIndicator();
 
     // IF DATA EXISTS RUN APP
     if(videoData) {
       console.log(videoData);
+      this.initRouter();
     }
     // OTHERWISE FETCH VIDEO DATA
     else {
@@ -62,6 +64,25 @@ class App {
       }
     });
 
+
+  }
+
+  initRouter() {
+    this.router = new navigo(null, false);
+    this.router.updatePageLinks();
+
+    this.router.on({
+      'products/:id': function () {
+        console.log('Products');
+      },
+      '/about': function () {
+        console.log('About');
+      },
+      '*': function () {
+        console.log('Home');
+      }
+    })
+    .resolve();
 
   }
 

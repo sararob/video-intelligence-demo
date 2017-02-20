@@ -52,6 +52,8 @@ class App {
           videoStore = videos;
         }
 
+        this.initRouter();
+
 
         for (var i in videos) {
           var video = videos[i];
@@ -72,18 +74,20 @@ class App {
     this.router.updatePageLinks();
 
     this.router.on({
-      'products/:id': function () {
-        console.log('Products');
+      '/': () => {
+        this.renderHomepage();
       },
-      '/about': function () {
-        console.log('About');
+      '/profile': () => {
+        this.renderProfile();
       },
-      '*': function () {
-        console.log('Home');
+      '/video/:id': (params) => {
+        this.renderVideo(params.id);
+      },
+      '/search/:query': () => {
+        this.renderSearchResults();
       }
     })
     .resolve();
-
   }
 
   clearStage() {
@@ -95,15 +99,20 @@ class App {
   }
 
   renderHomepage() {
+    this.$stage.html('<h1>Home</h1>');
+  }
 
+  renderProfile() {
+    this.$stage.html('<h1>Profile</h1>');
   }
 
   renderSearchResults() {
+    this.$stage.html('<h1>Results</h1>');
 
   }
 
-  renderDetailPage() {
-
+  renderDetailPage(id) {
+    this.$stage.html(`<h1>Video Id: ${id}</h1>`);
   }
 }
 

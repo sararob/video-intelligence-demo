@@ -54,9 +54,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', require('./routes/index'));
 app.use('/styleguide', require('./routes/styleguide'));
-app.use('/video', require('./routes/video'));
+app.use('*', require('./routes/index'));
+// app.use('/video', require('./routes/video'));
 
 app.use(cors());
 

@@ -1,0 +1,34 @@
+/*
+* Video Card
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$video-card: '.video-card';
+
+
+
+
+/*
+* Class
+*
+*/
+
+#{$video-card} {
+  box-shadow: 0 0 ($unit * 2) rgba(0, 0, 0, .12), 0 ($unit * 2) ($unit * 2) rgba(0, 0, 0, .24);
+  box-sizing: border-box;
+  display: block;
+  height: 272px;
+  padding: $unit * 2;
+  width: 262px;
+
+  #{$video-card}-video {
+    max-width: 244px;
+  }
+}

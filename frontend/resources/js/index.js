@@ -1,11 +1,11 @@
 import $ from 'jquery';
-import * as d3 from 'd3';
-import visavailChart from './timechart';
 import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
+import VideoCard from './video-card';
 
 const VIDEO_URL = window.location.protocol + '//' + window.location.host + '/getVideos';
-let videoStore;
+var VIDEO_STORE;
+
 
 class App {
   constructor() {
@@ -16,7 +16,7 @@ class App {
     this.$topnav = $('#top-nav');
 
     // RENDER LOADING SPINNER
-    //this.renderLoadingIndicator();
+    this.renderLoadingIndicator();
 
     // IF DATA EXISTS RUN APP
     if(videoData) {
@@ -49,24 +49,12 @@ class App {
           store.set('videos', videos);
         }
         else {
-          videoStore = videos;
+          VIDEO_STORE = videos;
         }
 
         this.initRouter();
-
-
-        for (var i in videos) {
-          var video = videos[i];
-          // console.log(video);
-          // maked3graph(video['annotations']['annotation_results'][0]['label_annotations'], video.url_safe_id);
-          // var faceAnnotations = video['annotations']['annotation_results'][0]['face_annotations'];
-          // renderFaces(faceAnnotations, video.url_safe_id);
-          // renderVideo(video.url_safe_id, video.link);
-        }
       }
     });
-
-
   }
 
   initRouter() {
@@ -81,7 +69,7 @@ class App {
         this.renderProfile();
       },
       '/video/:id': (params) => {
-        this.renderVideo(params.id);
+        this.renderVideoPage(params.id);
       },
       '/search/:query': () => {
         this.renderSearchResults();
@@ -91,7 +79,7 @@ class App {
   }
 
   clearStage() {
-
+    this.$stage.html('');
   }
 
   renderLoadingIndicator() {
@@ -99,7 +87,12 @@ class App {
   }
 
   renderHomepage() {
-    this.$stage.html('<h1>Home</h1>');
+    const videos = store.get('videos');
+    this.clearStage();
+
+    for(var i = 0, l = videos.length; i < l; i++) {
+      this.$stage.append(VideoCard(videos[i]));
+    }
   }
 
   renderProfile() {
@@ -108,16 +101,17 @@ class App {
 
   renderSearchResults() {
     this.$stage.html('<h1>Results</h1>');
-
   }
 
-  renderDetailPage(id) {
+  renderVideoPage(id) {
     this.$stage.html(`<h1>Video Id: ${id}</h1>`);
   }
 }
 
+
 export default App;
 
+// START APPLICATION
 $(document).ready(function() {
   new App();
 });

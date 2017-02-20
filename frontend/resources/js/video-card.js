@@ -1,7 +1,9 @@
 const VideoCard = function(video) {
+  console.log(video);
+
   return `
-    <a href="/video/${video.id}" class="video-card">
-      <video class="video-card-video" id="${video.id}" src="${video.link}"></video>
+    <a href="/video/${video.url_safe_id}" class="video-card" data-navigo>
+      <video class="video-card-video" id="${video.url_safe_id}" src="${video.link}"></video>
       <p>${video.name}</p>
     </a>
   `;

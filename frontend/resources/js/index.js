@@ -64,6 +64,7 @@ class App {
     this.router.on({
       '/': () => {
         this.renderHomepage();
+        this.router.updatePageLinks();
       },
       '/profile': () => {
         this.renderProfile();

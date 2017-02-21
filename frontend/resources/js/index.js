@@ -90,9 +90,11 @@ class App {
   renderHomepage() {
     const videos = store.get('videos');
     this.clearStage();
+    this.$stage.append('<div id="home" class="l-flex-wrap"></div>');
+    const $homepage = $('#home');
 
     for(var i = 0, l = videos.length; i < l; i++) {
-      this.$stage.append(VideoCard(videos[i]));
+      $homepage.append(VideoCard(videos[i]));
     }
   }
 

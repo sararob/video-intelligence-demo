@@ -21,14 +21,16 @@ $video-card: '.video-card';
 */
 
 #{$video-card} {
-  box-shadow: 0 0 ($unit * 2) rgba(0, 0, 0, .12), 0 ($unit * 2) ($unit * 2) rgba(0, 0, 0, .24);
+  box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .24);
   box-sizing: border-box;
   display: block;
   height: 272px;
+  margin: $unit;
   padding: $unit * 2;
+  text-decoration: none;
   width: 262px;
 
   #{$video-card}-video {
-    max-width: 244px;
+    width: 262px - ($unit * 4);
   }
 }

@@ -1,0 +1,56 @@
+$unit: 8px !default;
+
+
+/*
+* FLEX BOX GRID
+*
+*/
+
+.l-flex {
+  display: flex;
+}
+
+.l-flex-justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.l-flex-wrap {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+* Flex columns
+*
+*/
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: $i;
+    margin-left: $unit * 2;
+    margin-right: $unit * 2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .col-fixed-#{$i} {
+    flex: $i * ($unit * 10);
+    max-width: $i * ($unit * 10);
+    margin-left: $unit * 2;
+    margin-right: $unit * 2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

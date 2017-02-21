@@ -30,6 +30,8 @@ class App {
   }
 
   getVideoData() {
+    const that = this;
+
     $.ajax({
       url: VIDEO_URL,
 
@@ -52,7 +54,7 @@ class App {
           VIDEO_STORE = videos;
         }
 
-        this.initRouter();
+        that.initRouter();
       }
     });
   }

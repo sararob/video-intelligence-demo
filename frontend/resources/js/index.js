@@ -3,7 +3,7 @@ import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
 import VideoCard from './video-card';
 
-const VIDEO_URL = window.location.protocol + '//' + window.location.host + '/getVideos';
+const VIDEO_URL = window.location.protocol + '//' + window.location.host + '/api/videos';
 var VIDEO_STORE;
 
 

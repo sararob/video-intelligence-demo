@@ -9,84 +9,90 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const request = require('request');
-const http = require('http');
-const fs = require('fs');
-
 const storage = require('@google-cloud/storage');
-const storageClient = storage({
-  projectId: 'keynote-video-demo',
-  keyfileName: 'keyfile.json'
-});
-
-const base64 = require('node-base64-image');
-
+const storageClient = storage({projectId: 'keynote-video-demo', keyfileName: 'keyfile.json'});
 const app = express();
-app.enable('trust proxy');
-// [END setup]
-
 const port = normalizePort(process.env.PORT || 3000);
+
+
+/*
+* Port Settings
+*
+*/
+
+app.enable('trust proxy');
 app.set('port', port);
-const server = http.createServer(app);
 
 function normalizePort(val) {
   const port = parseInt(val, 10);
 
+  // NAMED PORT
   if (isNaN(port)) {
-    // named pipe
     return val;
   }
 
+  // CUSTOM PORT
   if (port >= 0) {
-    // port number
     return port;
   }
 
   return false;
 }
 
-// view engine setup
+
+/*
+* View Engine
+*
+*/
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+
+
+/*
+* Middleware
+*
+*/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/styleguide', require('./routes/styleguide'));
-// app.use('/video', require('./routes/video'));
-
 app.use(cors());
 
-var videoData;
 
-app.get('/getVideos', function(req, res) {
-  var bucket = storageClient.bucket('keynote-videos');
-  bucket.getFiles(function(err, files) {
+/*
+* API Route for Video Data
+*
+*
+*/
+
+app.get('/api/videos', (req, res) => {
+  const storageBucket = storageClient.bucket('keynote-videos');
+
+  storageBucket.getFiles(function(err, files) {
     if (!err) {
-      var fileArray = [];
-      files.forEach(function(file, index) {
+      let fileArray = [];
 
-        var file = files[index];
-        console.log(file.metadata.name);
-        // get the associated label annotation metadata
+      files.forEach(function(file) {
+        const videoAnnotationBucket = storageClient.bucket('video-json-output');
+        const videoAnnotationFilename = (file.metadata.name).replace('/', '').replace('.', '') + '.json';
+        const annotationFile = videoAnnotationBucket.file(videoAnnotationFilename);
 
-        var videoAnnotationBucket = storageClient.bucket("video-json-output")
-        var videoAnnotationFilename = (file.metadata.name).replace("/", "").replace(".", "") + ".json"
-        var annotationFile = videoAnnotationBucket.file(videoAnnotationFilename);
-
-        annotationFile.get(function(error, fileData, apiResp) {
-
+        // GET ANNONATIONS FOR EACH FILE
+        annotationFile.get(function(error, fileData) {
           if (error) {
             console.log('error getting file', error);
-          } else {
-            var remoteJsonUrl = fileData.metadata.mediaLink;
+          }
+          else {
+            const remoteJsonUrl = fileData.metadata.mediaLink;
 
             request({
               url: remoteJsonUrl,
               json: true
-            }, function(jsonReadErr, jsonResp, body) {
+            },
+            function(jsonReadErr, jsonResp, body) {
               if (!jsonReadErr) {
                 fileArray.push({
                   name: file.metadata.name,
@@ -95,8 +101,8 @@ app.get('/getVideos', function(req, res) {
                   annotations: body
                 });
 
+                // RETURN PAYLOAD
                 if (fileArray.length == files.length) {
-                  videoData = fileArray;
                   res.send(fileArray);
                 }
               }
@@ -104,15 +110,22 @@ app.get('/getVideos', function(req, res) {
           }
         });
       });
-
-      // console.log(videoData);
-    } else {
+    }
+    else {
       console.log('GCS error getting files', err);
     }
   });
 });
 
+
+/*
+* Route for all other pages
+*
+*
+*/
+
 app.use('*', require('./routes/index'));
+
 
 
 // app.get('/video/:id', function(req, res) {

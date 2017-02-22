@@ -1,6 +1,6 @@
-const VideoCard = function(video) {
-  console.log(video);
+import _ from 'lodash';
 
+const VideoCard = function(video) {
   return `
     <a href="/video/${video.url_safe_id}" class="video-card" data-navigo>
       <video class="video-card-video" id="${video.url_safe_id}" src="${video.link}"></video>

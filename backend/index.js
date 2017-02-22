@@ -1,8 +1,3 @@
-const datastore = require('@google-cloud/datastore');
-const datastoreClient = datastore({
-  projectId: 'keynote-video-demo',
-  keyfileName: 'keyfile.json'
-});
 const request = require('request');
 
 const storage = require('@google-cloud/storage');
@@ -47,16 +42,15 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
         const requestBody = {
           "auth": "AIzaSyBMXGMEKJZblpSgvFdE1OhoIICT8E1yEoY",
           "resource": {
-            "gcsInputUri": videoFilename,
-            "gcsOutputUri": "gs://video-json-output/" + fileName.replace(".", "").replace("/", "") + ".json",
-            'spec': {
-              'annotationTypes': ['LABEL_DETECTION', 'FACE_DETECTION', 'SHOT_CHANGE_DETECTION']
-            }
+            "inputUri": videoFilename,
+            "outputUri": "gs://video-json-output/" + fileName.replace(".", "").replace("/", "") + ".json",
+            'features': ['LABEL_DETECTION', 'FACE_DETECTION', 'SHOT_CHANGE_DETECTION']
           }
         }
 
         // 2) Get the status of the annotations (v1)
         videoService.videos.annotate(requestBody, function(error, resp) {
+          console.log(error);
           const opId = resp.name;
           console.log(opId);
 
@@ -75,7 +69,6 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
                   if (opResp['response']['annotationResults']) {
                     const annotations = opResp['response']['annotationResults'];
                     console.log('got the annotations!', annotations);
-                    // writeToDatastore(bucketName, fileName, annotations);
                     clearInterval(requestInterval);
                   } else {
                     console.log('still waiting...', opResp);
@@ -96,24 +89,4 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
     }
 
   }
-}
-
-function writeToDatastore(bucket, videoName, annotations) {
-	const key = datastoreClient.key([bucket, videoName]);
-  console.log('writing to ds', annotations);
-	const data = {
-		key: key,
-		data: annotations
-	};
-	datastoreClient.save({
-		key: key,
-		data: data
-	}, function (err) {
-		if (!err) {
-      // Data saved
-      console.log('written to datastore');
-		} else {
-      console.log('datastore error', err)
-    }
-	});
 }

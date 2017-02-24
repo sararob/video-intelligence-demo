@@ -28,6 +28,7 @@ $unit: 8px !default;
 
 @for $i from 1 through 12 {
   .col-#{$i} {
+    box-sizing: border-box;
     flex: $i;
     margin-left: $unit * 2;
     margin-right: $unit * 2;
@@ -38,9 +39,14 @@ $unit: 8px !default;
     &:last-child {
       margin-right: 0;
     }
+
+    &.no-margin {
+      margin: 0;
+    }
   }
 
   .col-fixed-#{$i} {
+    box-sizing: border-box;
     flex: $i * ($unit * 10);
     max-width: $i * ($unit * 10);
     margin-left: $unit * 2;
@@ -51,6 +57,10 @@ $unit: 8px !default;
     }
     &:last-child {
       margin-right: 0;
+    }
+
+    &.no-margin {
+      margin: 0;
     }
   }
 }

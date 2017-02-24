@@ -53,6 +53,7 @@ class App {
 
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
+        console.log(xhr.responseJSON);
 
         // STORE VIDEO DATA
         if(store.enabled) {

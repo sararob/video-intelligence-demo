@@ -34,7 +34,7 @@ $video-card-width: 262px;
     background: #000;
     height: 144px;
     overflow: hidden;
-    margin-bottom: $unit * 2;
+    margin-bottom: $unit;
     position: relative;
     width: $video-card-width - ($unit * 4);
   }

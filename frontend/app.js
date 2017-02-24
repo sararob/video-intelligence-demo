@@ -87,6 +87,7 @@ app.get('/api/videos', (req, res) => {
           }
           else {
             const remoteJsonUrl = fileData.metadata.mediaLink;
+            console.log(fileData.metadata);
 
             request({
               url: remoteJsonUrl,

@@ -1,7 +1,5 @@
 import $ from 'jquery';
 import store from 'store';
-
-
 import VideoCard from '../components/video-card';
 
 
@@ -12,6 +10,7 @@ class HomePage {
 
 
     this.render();
+    this.router.updatePageLinks();
     return this;
   }
 
@@ -19,12 +18,19 @@ class HomePage {
     console.log('destroy page');
   }
 
+  template(videos) {
+    return `
+      <div class="l-flex-wrap l-pad-6">
+      ${videos}
+      </div>
+    `;
+  }
+
   render() {
     const videos = store.get('videos');
+    const videoCards = videos.map((video) => VideoCard(video)).join('');
 
-    for(var i = 0, l = videos.length; i < l; i++) {
-      this.$stage.append(VideoCard(videos[i]));
-    }
+    this.$stage.html(this.template(videoCards));
   }
 }
 

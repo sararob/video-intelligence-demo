@@ -12,9 +12,6 @@ import VideoPage from './pages/videopage';
 import SearchPage from './pages/searchpage';
 import ProfilePage from './pages/profilepage';
 
-// COMPONENTS
-import VideoCard from './components/video-card';
-
 
 class App {
   constructor() {
@@ -116,17 +113,6 @@ class App {
 
   renderLoadingIndicator() {
     this.$stage.html('<h1>Loading One Moment...</h1>');
-  }
-
-  renderHomepage() {
-    const videos = store.get('videos');
-    this.clearStage();
-    this.$stage.append('<div id="home" class="l-flex-wrap"></div>');
-    const $homepage = $('#home');
-
-    for(var i = 0, l = videos.length; i < l; i++) {
-      $homepage.append(VideoCard(videos[i]));
-    }
   }
 }
 

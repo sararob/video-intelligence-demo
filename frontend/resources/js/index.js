@@ -1,10 +1,19 @@
+// DEPENDANCIES
 import $ from 'jquery';
 import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
-import VideoCard from './video-card';
 
-const VIDEO_URL = window.location.protocol + '//' + window.location.host + '/api/videos';
-var VIDEO_STORE;
+// CONSTANTS
+import {VIDEO_API, AUTH_API} from './constants';
+
+// PAGES
+import HomePage from './pages/homepage';
+import VideoPage from './pages/videopage';
+import SearchPage from './pages/searchpage';
+import ProfilePage from './pages/profilepage';
+
+// COMPONENTS
+import VideoCard from './components/video-card';
 
 
 class App {
@@ -14,6 +23,8 @@ class App {
     // REGISTER ELEMENTS
     this.$stage = $('#stage');
     this.$topnav = $('#top-nav');
+    this.currentPage = null;
+    this.videoStore = [];
 
     // RENDER LOADING SPINNER
     this.renderLoadingIndicator();
@@ -33,7 +44,7 @@ class App {
     const that = this;
 
     $.ajax({
-      url: VIDEO_URL,
+      url: VIDEO_API,
 
       beforeSend() {
         $('#status').text('Loading video library...');
@@ -51,7 +62,7 @@ class App {
           store.set('videos', videos);
         }
         else {
-          VIDEO_STORE = videos;
+          this.videoStore = videos;
         }
 
         that.initRouter();
@@ -63,19 +74,19 @@ class App {
     this.router = new navigo(null, false);
     this.router.updatePageLinks();
 
+
     this.router.on({
       '/': () => {
-        this.renderHomepage();
-        this.router.updatePageLinks();
+        this.renderPage('home');
       },
       '/profile': () => {
-        this.renderProfile();
+        this.renderPage('profile');
       },
       '/video/:id': (params) => {
-        this.renderVideoPage(params.id);
+        this.renderPage('video', params.id);
       },
-      '/search/:query': () => {
-        this.renderSearchResults();
+      '/search/:query': (params) => {
+        this.renderPage('search', params.query);
       }
     })
     .resolve();
@@ -83,6 +94,24 @@ class App {
 
   clearStage() {
     this.$stage.html('');
+  }
+
+  renderPage(page, id) {
+    // CLEAR PREVIOUS PAGE
+    if(this.currentPage && this.currentPage.destroy) {
+      this.currentPage.destroy();
+      this.currentPage = null;
+    }
+
+    // CLEAR STAGE
+    this.clearStage();
+
+    switch(page) {
+      case 'home': this.currentPage = new HomePage(this.$stage, this.router); break;
+      case 'search': this.currentPage = new SearchPage(this.$stage, this.router); break;
+      case 'video': this.currentPage = new VideoPage(this.$stage, this.router, id); break;
+      case 'profile': this.currentPage = new ProfilePage(this.$stage, this.router); break;
+    }
   }
 
   renderLoadingIndicator() {
@@ -98,18 +127,6 @@ class App {
     for(var i = 0, l = videos.length; i < l; i++) {
       $homepage.append(VideoCard(videos[i]));
     }
-  }
-
-  renderProfile() {
-    this.$stage.html('<h1>Profile</h1>');
-  }
-
-  renderSearchResults() {
-    this.$stage.html('<h1>Results</h1>');
-  }
-
-  renderVideoPage(id) {
-    this.$stage.html(`<h1>Video Id: ${id}</h1>`);
   }
 }
 

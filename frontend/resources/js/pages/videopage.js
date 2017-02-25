@@ -56,10 +56,16 @@ class VideoPage {
 
   getMetaData() {
     this.$video = $(`#${this.video.url_safe_id}`);
-    const videoEl = this.$video[0];
+
 
     this.$video.on('loadedmetadata', () => {
-      console.log(videoEl.duration);
+      const mins = parseInt(this.$video[0].duration / 60, 10);
+      const seconds = parseInt(this.$video[0].duration % 60, 10);
+
+      this.videoLength = `${mins}:${seconds}`;
+      console.log(`${mins}:${seconds}`);
+
+      this.$video.off();
     });
   }
 

@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import store from 'store';
+import $ from 'jquery';
 
 class VideoPage {
   constructor(stage, router, videoId) {
@@ -54,11 +55,17 @@ class VideoPage {
   }
 
   getMetaData() {
+    this.$video = $(`#${this.video.url_safe_id}`);
+    const videoEl = this.$video[0];
 
+    this.$video.on('loadedmetadata', () => {
+      console.log(videoEl.duration);
+    });
   }
 
   render() {
     this.$stage.html(this.template());
+    this.getMetaData();
   }
 }
 

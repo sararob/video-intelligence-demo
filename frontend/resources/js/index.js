@@ -20,6 +20,7 @@ class App {
     // REGISTER ELEMENTS
     this.$stage = $('#stage');
     this.$topnav = $('#top-nav');
+    this.$search = $('#search');
     this.currentPage = null;
     this.videoStore = [];
 
@@ -28,12 +29,52 @@ class App {
 
     // IF DATA EXISTS RUN APP
     if(videoData) {
-      this.initRouter();
+      this.initApp();
     }
     // OTHERWISE FETCH VIDEO DATA
     else {
       this.getVideoData();
     }
+  }
+
+  renderLoadingIndicator() {
+    this.$stage.html('<h1>Loading One Moment...</h1>');
+  }
+
+  initApp() {
+    this.initRouter();
+    this.activateSearchBar();
+  }
+
+  initRouter() {
+    this.router = new navigo(null, false);
+    this.router.updatePageLinks();
+
+
+    this.router.on({
+      '/': () => {
+        this.renderPage('home');
+      },
+      '/profile': () => {
+        this.renderPage('profile');
+      },
+      '/video/:id': (params) => {
+        this.renderPage('video', params.id);
+      },
+      '/search/:query': (params) => {
+        this.renderPage('search', params.query);
+      }
+    })
+    .resolve();
+  }
+
+  activateSearchBar() {
+    this.$search.keypress((e) => {
+      if(e.which == 13){//Enter key pressed
+        const query = this.$search.val();
+        this.router.navigate(`/search/${query}`);
+      }
+    });
   }
 
   getVideoData() {
@@ -61,38 +102,16 @@ class App {
           this.videoStore = videos;
         }
 
-        that.initRouter();
+        that.initApp();
       }
     });
-  }
-
-  initRouter() {
-    this.router = new navigo(null, false);
-    this.router.updatePageLinks();
-
-
-    this.router.on({
-      '/': () => {
-        this.renderPage('home');
-      },
-      '/profile': () => {
-        this.renderPage('profile');
-      },
-      '/video/:id': (params) => {
-        this.renderPage('video', params.id);
-      },
-      '/search/:query': (params) => {
-        this.renderPage('search', params.query);
-      }
-    })
-    .resolve();
   }
 
   clearStage() {
     this.$stage.html('');
   }
 
-  renderPage(page, id) {
+  renderPage(page, data) {
     // CLEAR PREVIOUS PAGE
     if(this.currentPage && this.currentPage.destroy) {
       this.currentPage.destroy();
@@ -104,15 +123,12 @@ class App {
 
     switch(page) {
       case 'home': this.currentPage = new HomePage(this.$stage, this.router); break;
-      case 'search': this.currentPage = new SearchPage(this.$stage, this.router); break;
-      case 'video': this.currentPage = new VideoPage(this.$stage, this.router, id); break;
+      case 'search': this.currentPage = new SearchPage(this.$stage, this.router, data); break;
+      case 'video': this.currentPage = new VideoPage(this.$stage, this.router, data); break;
       case 'profile': this.currentPage = new ProfilePage(this.$stage, this.router); break;
     }
   }
 
-  renderLoadingIndicator() {
-    this.$stage.html('<h1>Loading One Moment...</h1>');
-  }
 }
 
 

@@ -10,6 +10,11 @@ $unit: 8px !default;
   display: flex;
 }
 
+.l-flex-fullscreen {
+  display: flex;
+  align-items: stretch;
+}
+
 .l-flex-justify {
   display: flex;
   justify-content: space-between;

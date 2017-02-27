@@ -119,7 +119,7 @@ class VideoPage {
           Graphs
         </div>
 
-        <asside id="related-videos" class="col-fixed-4 no-margin l-pad-3"></asside>
+        <aside id="related-videos" class="col-fixed-4 no-margin l-pad-3"></aside>
       </article>
     `;
   }

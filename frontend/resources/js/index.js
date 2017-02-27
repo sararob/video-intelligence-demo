@@ -68,6 +68,25 @@ class App {
     .resolve();
   }
 
+
+  renderPage(page, data) {
+    // CLEAR PREVIOUS PAGE
+    if(this.currentPage && this.currentPage.destroy) {
+      this.currentPage.destroy();
+      this.currentPage = null;
+    }
+
+    // CLEAR STAGE
+    this.clearStage();
+
+    switch(page) {
+      case 'home': this.currentPage = new HomePage(this.$stage, this.router); break;
+      case 'search': this.currentPage = new SearchPage(this.$stage, this.router, data); break;
+      case 'video': this.currentPage = new VideoPage(this.$stage, this.router, data); break;
+      case 'profile': this.currentPage = new ProfilePage(this.$stage, this.router); break;
+    }
+  }
+
   activateSearchBar() {
     this.$search.keypress((e) => {
       if(e.which == 13){//Enter key pressed
@@ -110,25 +129,6 @@ class App {
   clearStage() {
     this.$stage.html('');
   }
-
-  renderPage(page, data) {
-    // CLEAR PREVIOUS PAGE
-    if(this.currentPage && this.currentPage.destroy) {
-      this.currentPage.destroy();
-      this.currentPage = null;
-    }
-
-    // CLEAR STAGE
-    this.clearStage();
-
-    switch(page) {
-      case 'home': this.currentPage = new HomePage(this.$stage, this.router); break;
-      case 'search': this.currentPage = new SearchPage(this.$stage, this.router, data); break;
-      case 'video': this.currentPage = new VideoPage(this.$stage, this.router, data); break;
-      case 'profile': this.currentPage = new ProfilePage(this.$stage, this.router); break;
-    }
-  }
-
 }
 
 

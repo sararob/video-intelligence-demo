@@ -4,7 +4,7 @@ import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
 
 // CONSTANTS
-import {VIDEO_API, AUTH_API} from './constants';
+import {VIDEO_API, VIDEO_DATA} from './constants';
 
 // PAGES
 import HomePage from './pages/homepage';
@@ -16,6 +16,8 @@ import ProfilePage from './pages/profilepage';
 class App {
   constructor() {
     const videoData = store.enabled ? store.get('videos') : false;
+
+    console.log(VIDEO_DATA);
 
     // REGISTER ELEMENTS
     this.$stage = $('#stage');

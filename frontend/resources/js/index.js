@@ -28,7 +28,6 @@ class App {
 
     // IF DATA EXISTS RUN APP
     if(videoData) {
-      console.log(videoData);
       this.initRouter();
     }
     // OTHERWISE FETCH VIDEO DATA
@@ -53,7 +52,6 @@ class App {
 
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
-        console.log(xhr.responseJSON);
 
         // STORE VIDEO DATA
         if(store.enabled) {

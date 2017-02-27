@@ -40,6 +40,9 @@ $button: '.button' !default;
   transition-property: all;
   transition-duration:.3s;
 
+  .material-icons {
+    line-height: $unit * 5;
+  }
 
   &:hover,
   &:focus {
@@ -55,6 +58,7 @@ $button: '.button' !default;
     box-shadow: none;
     text-decoration: none;
     transition-duration: 0s;
+    opacity: .56;
   }
 
   /*

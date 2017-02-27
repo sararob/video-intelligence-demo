@@ -99,7 +99,7 @@ app.get('/api/videos', (req, res) => {
                   name: file.metadata.name,
                   link: file.metadata.mediaLink,
                   url_safe_id: (file.metadata.name).replace('/', '-').replace('.','-'),
-                  annotations: body
+                  annotations: body.annotation_results[0]
                 });
 
                 // RETURN PAYLOAD

@@ -162,6 +162,18 @@ const CONSTANTS = {
     },
     'google-photos-best-picture-mp4':{
       'title':'Google Photos: Best Picture'
+    },
+    'google-app-replacement-umpire-mp4':{
+      'title':'Google App: Replacement Umpire'
+    },
+    'google-fiber-nicks-first-pitch-mp4':{
+      'title':'Google Fiber: Nick\'s First Pitch'
+    },
+    'underwater-hangouts-on-air-mp4':{
+      'title':'Underwater Hangouts On Air'
+    },
+    'my-tracks-fitness-tracker':{
+      'title':'My Tracks Fitness Tracker'
     }
   }
 };

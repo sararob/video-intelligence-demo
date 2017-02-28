@@ -159,6 +159,9 @@ const CONSTANTS = {
     },
     'google-photos-automatic-backup-mp4':{
       'title':'Google Photos: Automatic Backup'
+    },
+    'google-photos-best-picture-mp4':{
+      'title':'Google Photos: Best Picture'
     }
   }
 };

@@ -5,160 +5,175 @@ const CONSTANTS = {
   AUTH_API: `${HOST}/api/auth`,
   VIDEO_DATA: {
     'curling-webm':{
-      'title':'curling-webm'
+      'title':'Curling'
     },
     'airhockey-MOV':{
-      'title':'airhockey-MOV'
+      'title':'Kid playing air hockey'
     },
     'trampoline-MOV':{
-      'title':'trampoline-MOV'
+      'title':'Kid in a bounce house'
     },
     'google-duo-salt-pepper-mp4':{
-      'title':'google-duo-salt-pepper-mp4'
+      'title':'Google Duo | Salt & Pepper'
     },
     'datacenter-mural-mp4':{
-      'title':'datacenter-mural-mp4'
+      'title':'Data Center Mural Project'
     },
     'google-earth-moon-mp4':{
       'title':'google-earth-moon-mp4'
     },
     'tango-commercial-mp4':{
-      'title':'tango-commercial-mp4'
+      'title':'Tango: Re-imagine space around you'
     },
     'scuba-webm':{
-      'title':'scuba-webm'
+      'title':'Scuba diving'
     },
     'google-trips-mp4':{
-      'title':'google-trips-mp4'
+      'title':'Introducing Google Trips'
     },
     'flyboarding-webm':{
-      'title':'flyboarding-webm'
+      'title':'Flyboarding'
     },
     'treehouse-tour-webm':{
-      'title':'treehouse-tour-webm'
+      'title':'Treehouse tour'
     },
-    'jeffdean-ml-mov':{
-      'title':'jeffdean-ml-mov'
+    'jeff-dean-keynote-mov':{
+      'title':'Jeff Dean at GCP Next 2016 Keynote'
     },
     'sandboarding-webm':{
       'title':'sandboarding-webm'
     },
     'pixel-glamping-mp4':{
-      'title':'pixel-glamping-mp4'
+      'title':'#Pixel: Glamping by Alisha Marie'
     },
     'snowglobe-mp4':{
-      'title':'snowglobe-mp4'
+      'title':'Google+ Snowglobe'
     },
     'nat-lo-recap-mp4':{
-      'title':'nat-lo-recap-mp4'
+      'title':'Nat & Lo: 2016 Recap'
     },
     'truck_show-mov':{
-      'title':'truck_show-mov'
+      'title':'Family at a truck show'
     },
     'boumba-village-webm':{
-      'title':'boumba-village-webm'
+      'title':'Marche de Boumba'
     },
     'barcelona-webm':{
-      'title':'barcelona-webm'
+      'title':'Barcelona'
     },
     'google-translate-spicy-mp4':{
-      'title':'google-translate-spicy-mp4'
+      'title':'Google Demo Slam: Extra Spicy'
     },
     'google-home-superbowl-mp4':{
-      'title':'google-home-superbowl-mp4'
+      'title':'Google Home | 2017 Superbowl Commercial'
     },
     'android-pay-mp4':{
-      'title':'android-pay-mp4'
+      'title':'Android Pay'
     },
     'kennedy-nixon-1960-debate-mp4':{
-      'title':'kennedy-nixon-1960-debate-mp4'
+      'title':'Kennedy & Nixon 1960 Presidential Debate'
     },
     'amsterdam-port-webm':{
-      'title':'amsterdam-port-webm'
+      'title':'Amsterdam Port Time Lapse'
     },
     'basketball-webm':{
-      'title':'basketball-webm'
+      'title':'Team USA Basketball Practice'
     },
     'eindhoven-webm':{
       'title':'eindhoven-webm'
     },
     'larry-sergey-ice-bucket-challenge-mp4':{
-      'title':'larry-sergey-ice-bucket-challenge-mp4'
+      'title':'Larry and Sergey do the Ice Bucket Challenge'
     },
     'white-house-webm':{
-      'title':'white-house-webm'
+      'title':'Tour of the White House'
     },
     'kid_toys-mov':{
-      'title':'kid_toys-mov'
+      'title':'Kid playing with toys'
     },
     'fathers-day-mp4':{
-      'title':'fathers-day-mp4'
+      'title':'Google+: New Dad'
     },
     'google-photos-mp4':{
-      'title':'google-photos-mp4'
+      'title':'Google Photos: Happier Holidays'
     },
     'charlie-chaplin-doodle-mp4':{
-      'title':'charlie-chaplin-doodle-mp4'
+      'title':'Charlie Chaplin Google Doodle'
     },
     'mumbai-dancing-webm':{
       'title':'mumbai-dancing-webm'
     },
     'google-photos-space-mp4':{
-      'title':'google-photos-space-mp4'
+      'title':'Google Photos: Extra Space'
     },
     'rio-ricardo-mp4':{
-      'title':'rio-ricardo-mp4'
+      'title':'Beyond the Map, Rio - Ricardo\'s Story'
     },
     'rio-paloma-mp4':{
-      'title':'rio-paloma-mp4'
+      'title':'Beyond the Map, Rio - Paloma\'s Story'
     },
-    'yearinsearch-14-mp4':{
-      'title':'yearinsearch-14-mp4'
+    'year-in-search-2014-mp4':{
+      'title':'Year in Search 2014'
     },
     'hamilton-webm':{
-      'title':'hamilton-webm'
+      'title':'Hamilton cast performs at the White House'
     },
     'eating-habits-mp4':{
-      'title':'eating-habits-mp4'
+      'title':'Good Eating Habits'
     },
     'impact-challenge-india-mp4':{
       'title':'impact-challenge-india-mp4'
     },
     'google-paris-office-mp4':{
-      'title':'google-paris-office-mp4'
+      'title':'Tour of Google Paris'
     },
-    'yearinsearch-16-mp4':{
-      'title':'yearinsearch-16-mp4'
+    'year-in-search-2016-mp4':{
+      'title':'Year in Search 2016'
     },
     'onhub-kid-test-mp4':{
-      'title':'onhub-kid-test-mp4'
+      'title':'OnHub setup: kid test'
     },
     'iwd-2014-mp4':{
-      'title':'iwd-2014-mp4'
+      'title':'International Women\'s Day 2014'
     },
-    'yearinsearch-13-mp4':{
-      'title':'yearinsearch-13-mp4'
+    'year-in-search-2013-mp4':{
+      'title':'Year in Search 2013'
     },
     'launchpad-jakarta-mp4':{
-      'title':'launchpad-jakarta-mp4'
+      'title':'Google Launchpad Jakarta'
     },
     'roller-derby-mp4':{
       'title':'roller-derby-mp4'
     },
-    'yearinsearch-15-mp4':{
-      'title':'yearinsearch-15-mp4'
+    'year-in-search-2015-mp4':{
+      'title':'Year in Search 2015'
     },
     'national-parks-mp4':{
-      'title':'national-parks-mp4'
+      'title':'Tour of National Parks'
     },
     'launchpad-bordeaux-mp4':{
-      'title':'launchpad-bordeaux-mp4'
+      'title':'Google Launchpad Bordeaux'
     },
     'mothers-day-mp4':{
-      'title':'mothers-day-mp4'
+      'title':'Here\'s to the Moms'
     },
-    'googlephotos-automatic-backup-mp4':{
-      'title':'googlephotos-automatic-backup-mp4'
+    'google-photos-automatic-backup-mp4':{
+      'title':'Google Photos: Automatic Backup'
+    },
+    'google-photos-best-picture-mp4':{
+      'title':'Google Photos: Best Picture'
+    },
+    'google-app-replacement-umpire-mp4':{
+      'title':'Google App: Replacement Umpire'
+    },
+    'google-fiber-nicks-first-pitch-mp4':{
+      'title':'Google Fiber: Nick\'s First Pitch'
+    },
+    'underwater-hangouts-on-air-mp4':{
+      'title':'Underwater Hangouts On Air'
+    },
+    'my-tracks-fitness-tracker':{
+      'title':'My Tracks Fitness Tracker'
     }
   }
 };

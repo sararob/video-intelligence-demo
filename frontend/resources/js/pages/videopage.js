@@ -140,12 +140,7 @@ class VideoPage {
       const left = (start / this.videoDuration) * 100;
       const right = 100 - ((end / this.videoDuration) * 100);
 
-      // console.log('duration:', this.videoDuration);
-      // console.log('start:', segment.start_time_offset / 1000000);
-      // console.log(label, left.toFixed(2));
-      // console.log(label, right.toFixed(2));
-
-      segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`
+      segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`;
     }
 
     return segmentEl;

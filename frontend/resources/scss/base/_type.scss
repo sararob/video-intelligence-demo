@@ -35,6 +35,10 @@ $text: '.text';
   opacity: .87;
   padding: 0;
 
+  &.no-margin {
+    margin: 0 !important;
+  }
+
   &.is-secondary {
     opacity: .56;
   }

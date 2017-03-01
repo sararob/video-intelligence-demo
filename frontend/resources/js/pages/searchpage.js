@@ -33,7 +33,6 @@ class SearchPage {
       }
     });
 
-    console.log(results);
     return results;
   }
 
@@ -57,7 +56,7 @@ class SearchPage {
   }
 
   renderResultCards() {
-    const videos = this.results.map((video) => VideoCard(video, true));
+    const videos = this.results.map((video) => VideoCard(video, this.query, true));
     this.$results.append(videos);
   }
 
@@ -68,7 +67,10 @@ class SearchPage {
   template() {
     return `
       <article class="l-flex-fullscreen l-pinned">
-        <div id='results' class="col-1 l-pad-horizontal-5 l-pad-vertical-12 l-overflow"></div>
+        <div id='results' class="col-1 l-pad-horizontal-5 l-pad-vertical-12 l-overflow">
+          <h2 class="text-title is-uppercase no-margin">RESULTS FOR ${this.query}</h2>
+          <p class="text-body is-secondary is-uppercase">${this.results.length} videos</p>
+        </div>
         <aside id="sidebar" class="col-fixed-4 fill-subtle  l-overflow"></aside>
       </article>
     `;

@@ -64,6 +64,10 @@ $video-card-width: 262px;
     z-index: 1;
   }
 
+  .graph {
+    margin: $unit 0;
+  }
+
   h3 {
     margin: 0;
     white-space: nowrap;

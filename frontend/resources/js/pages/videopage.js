@@ -70,15 +70,44 @@ class VideoPage {
     });
   }
 
-  renderTopLabels() {
-    const labels = this.video.annotations.label_annotations;
-    console.log(labels);
+  getSortedLabels(labels) {
+    const averageConfidenceList = labels.map(label => {
+      let confidence = 0;
+      let confidenceAverge;
 
-    for (var i = 0; i < labels.length; i++) {
-      let label = labels[i];
+      // CHECK FOR LOCATIONS
+      if(label.locations && label.locations.length) {
+
+        // LOOP THROUGH LOCATIONS
+        _.forEach(label.locations, (location) => {
+          if(location.level === "SHOT_LEVEL") {
+            // ACCUMULATE CONFIDENCE
+            confidence = confidence + location.confidence;
+          }
+        })
+
+        // FIND AVERAGE COFIDENCE FOR LABEL
+        confidenceAverge = confidence / label.locations.length;
+
+        // RETURN LABEL
+        return {
+          label: label.description,
+          confidence: confidenceAverge
+        }
+      }
+    });
+
+    return _.orderBy(averageConfidenceList, ['confidence'], ['desc']);
+  }
+
+  renderTopLabels() {
+    const sortedList = this.getSortedLabels(this.video.annotations.label_annotations);
+
+    for (var i = 0; i < sortedList.length; i++) {
+      let label = sortedList[i];
 
       if(i < 10) {
-        this.$topLabels.append(`<li>${label.description}</li>`);
+        this.$topLabels.append(`<li><span class="label is-primary" style="opacity: ${label.confidence};">${label.label}</span></li>`);
       }
     }
   }
@@ -164,7 +193,7 @@ class VideoPage {
 
         <div class="hero-sidebar col-fixed-4 no-margin">
           <h4 class="text-caption is-secondary is-uppercase">Top Labels</h4>
-          <ul id="top-labels"></ul>
+          <ul id="top-labels" class="is-unstyled"></ul>
         </div>
       </header>
 

@@ -129,3 +129,11 @@ $text: '.text';
 #{$text}-quote-2 {
   font-weight: 600;
 }
+
+ul {
+  &.is-unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

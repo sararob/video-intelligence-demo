@@ -115,7 +115,7 @@ class App {
 
         // STORE VIDEO DATA
         if(store.enabled) {
-          store.set('videos', videos.slice(1,40));
+          store.set('videos', videos);
         }
         else {
           this.videoStore = videos;

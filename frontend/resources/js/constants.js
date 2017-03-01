@@ -38,7 +38,7 @@ const CONSTANTS = {
       'title':'Treehouse tour'
     },
     'jeff-dean-keynote-mov':{
-      'title':'Jeff Dean at GCP Next 2016 Keynote'
+      'title':'Jeff Dean at GCP Next 2016 Keynote',
     },
     'sandboarding-webm':{
       'title':'sandboarding-webm'

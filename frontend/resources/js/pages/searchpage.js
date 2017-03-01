@@ -46,13 +46,65 @@ class SearchPage {
 
     if(this.results.length) {
       this.renderResultCards();
+      this.renderGraphs();
     }
     else {
       this.renderNoResults();
     }
 
+
     // UPDATE ROUTER LINKS
     this.router.updatePageLinks();
+  }
+
+  renderGraphs() {
+    const that = this;
+
+    $('.video-card-video').on('loadedmetadata', function() {
+      const $video = $(this);
+      const key = $video.attr('id');
+      const duration = this.duration;
+      const videoData = _.find(that.videos, {url_safe_id: key});
+
+      const label = _.find(videoData.annotations.label_annotations, (label) => {
+        return _.toLower(label.description) === _.toLower(that.query);
+      });
+
+      const timeline = that.renderTimeline(label.locations, duration);
+      // INSERT VIDEO
+
+      $video.parent().parent().find('.video-card-graph').append(timeline);
+    });
+  }
+
+  renderTimeline(locations, duration) {
+    let segments = [];
+
+    for (var i = 0; i < locations.length; i++) {
+      let type = locations[i].level;
+      let segment = locations[i].segment;
+
+      if(type === 'SHOT_LEVEL') {
+        segments.push(this.createSegment(segment, duration));
+      }
+    }
+
+    return `<div class="graph">${segments.join('')}</div>`;
+  }
+
+  createSegment(segment, duration) {
+    let segmentEl = '';
+
+
+    const start = segment.start_time_offset ? (segment.start_time_offset / 1000000) : 0;
+    const end = segment.end_time_offset / 1000000;
+
+    const left = (start / duration) * 100;
+    const right = 100 - ((end / duration) * 100);
+
+    segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`;
+
+    return segmentEl;
   }
 
   renderResultCards() {

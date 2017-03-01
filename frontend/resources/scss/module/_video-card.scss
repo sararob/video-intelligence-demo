@@ -66,6 +66,9 @@ $video-card-width: 262px;
 
   h3 {
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   p {
@@ -73,8 +76,5 @@ $video-card-width: 262px;
     font-weight: 400;
     margin-bottom: 0;
     line-height: 16px;
-    height: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }

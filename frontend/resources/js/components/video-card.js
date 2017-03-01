@@ -1,8 +1,10 @@
 import _ from 'lodash';
+import {VIDEO_DATA} from '../constants';
 
 export default function(video, expanded) {
-  const title = _.capitalize(video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
+  const title = VIDEO_DATA[video.url_safe_id] ? VIDEO_DATA[video.url_safe_id].title : _.capitalize(video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
   const tags = video.annotations.label_annotations.map(label => label.description).join(', ');
+
 
   // DEFAULT VALUES
   let header = `<h3 class="text-body">${title}</h3>`;

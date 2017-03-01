@@ -20,7 +20,7 @@ const CONSTANTS = {
       'title':'Data Center Mural Project'
     },
     'google-earth-moon-mp4':{
-      'title':'google-earth-moon-mp4'
+      'title':'Moon in Google Earth'
     },
     'tango-commercial-mp4':{
       'title':'Tango: Re-imagine space around you'
@@ -80,7 +80,7 @@ const CONSTANTS = {
       'title':'Team USA Basketball Practice'
     },
     'eindhoven-webm':{
-      'title':'eindhoven-webm'
+      'title':'DEZEEN AND MINI WORLD TOUR'
     },
     'larry-sergey-ice-bucket-challenge-mp4':{
       'title':'Larry and Sergey do the Ice Bucket Challenge'
@@ -101,7 +101,7 @@ const CONSTANTS = {
       'title':'Charlie Chaplin Google Doodle'
     },
     'mumbai-dancing-webm':{
-      'title':'mumbai-dancing-webm'
+      'title':'Mumbai Dancing'
     },
     'google-photos-space-mp4':{
       'title':'Google Photos: Extra Space'
@@ -122,7 +122,7 @@ const CONSTANTS = {
       'title':'Good Eating Habits'
     },
     'impact-challenge-india-mp4':{
-      'title':'impact-challenge-india-mp4'
+      'title':'Impact Challenge, India'
     },
     'google-paris-office-mp4':{
       'title':'Tour of Google Paris'
@@ -143,7 +143,7 @@ const CONSTANTS = {
       'title':'Google Launchpad Jakarta'
     },
     'roller-derby-mp4':{
-      'title':'roller-derby-mp4'
+      'title':'Roller Derby'
     },
     'year-in-search-2015-mp4':{
       'title':'Year in Search 2015'

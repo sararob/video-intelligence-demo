@@ -72,6 +72,7 @@ class VideoPage {
 
   renderTopLabels() {
     const labels = this.video.annotations.label_annotations;
+    console.log(labels);
 
     for (var i = 0; i < labels.length; i++) {
       let label = labels[i];

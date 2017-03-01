@@ -13,6 +13,7 @@ const storage = require('@google-cloud/storage');
 const storageClient = storage({projectId: 'keynote-video-demo', keyfileName: 'keyfile.json'});
 const app = express();
 const port = normalizePort(process.env.PORT || 3000);
+const basicAuth = require('express-basic-auth');
 
 
 /*
@@ -60,6 +61,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+
+
+/*
+* Basic Authentication
+*
+*/
+
+app.use(basicAuth({
+  users: {
+    'admin': 'realtime123'
+  },
+  challenge: true
+}));
 
 
 /*
@@ -126,7 +140,6 @@ app.get('/api/videos', (req, res) => {
 */
 
 app.use('*', require('./routes/index'));
-
 
 
 // app.get('/video/:id', function(req, res) {

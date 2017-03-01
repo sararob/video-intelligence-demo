@@ -73,7 +73,18 @@ class SearchPage {
       const timeline = that.renderTimeline(label.locations, duration);
       // INSERT VIDEO
 
-      $video.parent().parent().find('.video-card-graph').append(timeline);
+      const $videoContainer = $video.parent().parent().find('.video-card-graph');
+      $videoContainer.append(timeline);
+
+      $videoContainer.find('.graph-segment').on('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const startTime = $(e.currentTarget).data('time');
+
+        $video[0].currentTime = startTime;
+        $video[0].play();
+      });
     });
   }
 

@@ -17,8 +17,6 @@ class App {
   constructor() {
     const videoData = store.enabled ? store.get('videos') : false;
 
-    console.log(VIDEO_DATA);
-
     // REGISTER ELEMENTS
     this.$stage = $('#stage');
     this.$topnav = $('#top-nav');

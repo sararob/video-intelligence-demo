@@ -11,11 +11,10 @@ class VideoPage {
     this.router = router;
     this.videoId = videoId;
     this.videoLength = '';
+    this.videoDuration = null;
     this.videos = store.get('videos');
     this.video = _.find(this.videos, {url_safe_id: videoId});
     this.title = _.capitalize(this.video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
-
-    console.log(this.video);
 
     // RENDER PAGE
     this.render();
@@ -30,35 +29,44 @@ class VideoPage {
     this.$video = $(`#${this.video.url_safe_id}`);
     this.$videoLength =  $('#video-length');
     this.$topLabels = $('#top-labels');
-    this.$graphs = $('#graphs');
+    this.$dataRows = $('#data-rows');
     this.$relatedVideos = $('#related-videos');
 
     // RENDER DATA ON PAGE
     this.renderVideoLength();
     this.renderTopLabels();
-    this.renderGraph();
     this.renderVideoCards();
 
     // UPDATE PAGE LINKS
     this.router.updatePageLinks();
   }
 
+  toHHMMSS() {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+  }
 
   renderVideoLength() {
     // WAIT FOR META DATA TO LOAD
     this.$video.on('loadedmetadata', () => {
       const mins = parseInt(this.$video[0].duration / 60, 10);
-      let seconds = parseInt(this.$video[0].duration % 60, 10);
+      const seconds = parseInt(this.$video[0].duration % 60, 10);
 
       // FORMAT DATA AND RENDER
-      if (seconds < 10) {
-        seconds = '0' + seconds;
-      }
+      this.videoDuration = this.$video[0].duration;
       this.videoLength = `${mins}:${seconds}`;
       this.$videoLength.append(this.videoLength);
 
       // REMOVE EVENT LISTENERS (CLEANUP)
       this.$video.off();
+      this.renderGraph();
     });
   }
 
@@ -79,9 +87,68 @@ class VideoPage {
 
     for (var i = 0; i < labels.length; i++) {
       let label = labels[i];
+      let timeline = this.renderTimeline(label.locations, label.description);
 
-      this.$graphs.append(`<li>${label.description}</li>`);
+      this.$dataRows.append(`
+        <tr>
+          <td><span class="label">${label.description}</span></td>
+          <td class="is-full-width">${timeline}</td>
+        </tr>
+      `);
     }
+
+    this.activateSegmentLinks();
+  }
+
+  activateSegmentLinks() {
+    $('.graph-segment').on('click', (e) => {
+      e.preventDefault();
+      const startTime = $(e.currentTarget).data('time');
+
+      console.log(startTime);
+      console.log(this.$video);
+
+      this.$video[0].currentTime = startTime;
+      this.$video[0].play();
+    })
+  }
+
+  renderTimeline(locations, label) {
+    let segments = [];
+
+    for (var i = 0; i < locations.length; i++) {
+      let type = locations[i].level;
+      let segment = locations[i].segment;
+
+      if(type === "SHOT_LEVEL") {
+        segments.push(this.createSegment(segment, label));
+      }
+    }
+
+    return `<div class="graph">${segments.join('')}</div>`;
+  }
+
+  createSegment(segment, label) {
+    const hasStartAndEnd = segment.start_time_offset && segment.end_time_offset;
+    let segmentEl = '';
+
+
+    if(hasStartAndEnd) {
+      const start = segment.start_time_offset / 1000000;
+      const end = segment.end_time_offset / 1000000;
+
+      const left = (start / this.videoDuration) * 100;
+      const right = 100 - ((end / this.videoDuration) * 100);
+
+      // console.log('duration:', this.videoDuration);
+      // console.log('start:', segment.start_time_offset / 1000000);
+      // console.log(label, left.toFixed(2));
+      // console.log(label, right.toFixed(2));
+
+      segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`
+    }
+
+    return segmentEl;
   }
 
   renderVideoCards() {
@@ -119,7 +186,17 @@ class VideoPage {
 
       <article class="l-flex">
         <div id="graphs" class="col-1 l-pad-6 no-margin">
-          Graphs
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Timeline</th>
+              </tr>
+            <thead>
+            <tbody id="data-rows">
+
+            </tbody>
+          </table>
         </div>
 
         <aside id="related-videos" class="col-fixed-4 no-margin l-pad-3"></aside>

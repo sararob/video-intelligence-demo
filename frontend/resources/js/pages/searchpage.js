@@ -74,6 +74,7 @@ class SearchPage {
       // INSERT VIDEO
 
       const $videoContainer = $video.parent().parent().find('.video-card-graph');
+      $videoContainer.append(`<div class="text-caption-2 no-margin">${that.query}</div>`);
       $videoContainer.append(timeline);
 
       $videoContainer.find('.graph-segment').on('click', (e) => {

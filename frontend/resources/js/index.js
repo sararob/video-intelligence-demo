@@ -4,7 +4,7 @@ import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
 
 // CONSTANTS
-import {VIDEO_API, VIDEO_DATA} from './constants';
+import {VIDEO_API} from './constants';
 
 // PAGES
 import HomePage from './pages/homepage';
@@ -115,7 +115,7 @@ class App {
 
         // STORE VIDEO DATA
         if(store.enabled) {
-          store.set('videos', videos);
+          store.set('videos', videos.slice(1,40));
         }
         else {
           this.videoStore = videos;

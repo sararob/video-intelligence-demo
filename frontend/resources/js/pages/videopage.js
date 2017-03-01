@@ -160,19 +160,16 @@ class VideoPage {
   }
 
   createSegment(segment, label) {
-    const hasStartAndEnd = segment.start_time_offset && segment.end_time_offset;
     let segmentEl = '';
 
 
-    if(hasStartAndEnd) {
-      const start = segment.start_time_offset / 1000000;
-      const end = segment.end_time_offset / 1000000;
+    const start = segment.start_time_offset ? (segment.start_time_offset / 1000000) : 0;
+    const end = segment.end_time_offset / 1000000;
 
-      const left = (start / this.videoDuration) * 100;
-      const right = 100 - ((end / this.videoDuration) * 100);
+    const left = (start / this.videoDuration) * 100;
+    const right = 100 - ((end / this.videoDuration) * 100);
 
-      segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`;
-    }
+    segmentEl = `<a href="#" class="graph-segment" style="left: ${left.toFixed(2)}%; right: ${right.toFixed(2)}%;" data-time="${start}"></a>`;
 
     return segmentEl;
   }

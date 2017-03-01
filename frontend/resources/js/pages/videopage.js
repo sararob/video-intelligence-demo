@@ -2,6 +2,7 @@ import _ from 'lodash';
 import store from 'store';
 import $ from 'jquery';
 
+import {VIDEO_DATA} from '../constants';
 import VideoCard from '../components/video-card';
 
 class VideoPage {
@@ -14,7 +15,7 @@ class VideoPage {
     this.videoDuration = null;
     this.videos = store.get('videos');
     this.video = _.find(this.videos, {url_safe_id: videoId});
-    this.title = _.capitalize(this.video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
+    this.title = VIDEO_DATA[this.video.url_safe_id] ? VIDEO_DATA[this.video.url_safe_id].title : _.capitalize(this.video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
 
     // RENDER PAGE
     this.render();

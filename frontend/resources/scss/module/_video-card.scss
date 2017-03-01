@@ -25,10 +25,25 @@ $video-card-width: 262px;
   box-sizing: border-box;
   display: block;
   height: $unit * 30;
-  margin: $unit;
+  margin: $unit * 2;
+  overflow: hidden;
   padding: $unit * 2;
+  position: relative;
   text-decoration: none;
   width: $video-card-width;
+
+  &.is-expanded {
+    height: 176px;
+    width: auto;
+    padding-left: $video-card-width;
+
+    #{$video-card}-hero {
+      position: absolute;
+      top: $unit * 2;
+      left: $unit * 2;
+      z-index: $z-1;
+    }
+  }
 
   #{$video-card}-hero {
     background: #000;
@@ -49,7 +64,17 @@ $video-card-width: 262px;
     z-index: 1;
   }
 
+  h3 {
+    margin: 0;
+  }
+
   p {
+    font-size: 10px;
+    font-weight: 400;
     margin-bottom: 0;
+    line-height: 16px;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

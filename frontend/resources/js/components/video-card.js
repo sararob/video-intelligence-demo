@@ -2,15 +2,20 @@ import _ from 'lodash';
 
 export default function(video, expanded) {
   const title = _.capitalize(video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
-  let header = `<p class="text-body">${title}</p>`;
+  const tags = video.annotations.label_annotations.map(label => label.description).join(', ');
+
+  // DEFAULT VALUES
+  let header = `<h3 class="text-body">${title}</h3>`;
+  let selectedTags = tags.length > 90 ? `${tags.substring(0,90)}...` : tags;
   let graph = '';
   let isExpanded = '';
 
   // UPDATE ELEMENTS FOR EXANDED VIDEO CARD
   if(expanded) {
     header = `<h3 class="text-title">${title}</h3>`;
-    graph = '<div class="video-card-graph">Create Graph</div>';
+    graph = '<div class="video-card-graph"></div>';
     isExpanded = 'is-expanded';
+    selectedTags = tags.length > 230 ? `${tags.substring(0,230)}...` : tags;
   }
 
   // RETURN VIDEO CARD ELEMENT
@@ -21,7 +26,7 @@ export default function(video, expanded) {
       </div>
       ${header}
       ${graph}
-      <p class="text-caption is-secondary">${video.name}</p>
+      <p class="text-caption is-secondary">${selectedTags}</p>
     </a>
   `;
 }

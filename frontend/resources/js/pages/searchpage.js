@@ -68,7 +68,7 @@ class SearchPage {
   template() {
     return `
       <article class="l-flex-fullscreen l-pinned">
-        <div id='results' class="col-1 l-pad-5 l-overflow"></div>
+        <div id='results' class="col-1 l-pad-horizontal-5 l-pad-vertical-12 l-overflow"></div>
         <aside id="sidebar" class="col-fixed-4 fill-subtle  l-overflow"></aside>
       </article>
     `;

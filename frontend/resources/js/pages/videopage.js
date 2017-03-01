@@ -106,8 +106,9 @@ class VideoPage {
     for (var i = 0; i < sortedList.length; i++) {
       let label = sortedList[i];
 
-      if(i < 10) {
-        this.$topLabels.append(`<li><span class="label is-primary" style="opacity: ${label.confidence};">${label.label}</span></li>`);
+      if(i < 8) {
+        let percent = (label.confidence * 100).toFixed();
+        this.$topLabels.append(`<li><span class="label is-primary is-block" style="opacity: ${label.confidence};">${label.label} <em>${percent}%</em></span></li>`);
       }
     }
   }
@@ -192,7 +193,7 @@ class VideoPage {
         </div>
 
         <div class="hero-sidebar col-fixed-4 no-margin">
-          <h4 class="text-caption is-secondary is-uppercase">Top Labels</h4>
+          <h4 class="text-caption is-secondary is-uppercase">Highest Confidence Labels</h4>
           <ul id="top-labels" class="is-unstyled"></ul>
         </div>
       </header>

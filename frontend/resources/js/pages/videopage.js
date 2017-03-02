@@ -75,6 +75,7 @@ class VideoPage {
     const averageConfidenceList = labels.map(label => {
       let confidence = 0;
       let confidenceAverge;
+      let locations;
 
       // CHECK FOR LOCATIONS
       if(label.locations && label.locations.length) {
@@ -93,7 +94,8 @@ class VideoPage {
         // RETURN LABEL
         return {
           label: label.description,
-          confidence: confidenceAverge
+          confidence: confidenceAverge,
+          locations: label.locations
         }
       }
     });
@@ -115,15 +117,15 @@ class VideoPage {
   }
 
   renderGraph() {
-    const labels = this.video.annotations.label_annotations;
+    const sortedLabels = this.getSortedLabels(this.video.annotations.label_annotations);
 
-    for (var i = 0; i < labels.length; i++) {
-      let label = labels[i];
-      let timeline = this.renderTimeline(label.locations, label.description);
+    for (var i = 0; i < sortedLabels.length; i++) {
+      let label = sortedLabels[i];
+      let timeline = this.renderTimeline(label.locations, label.label);
 
       this.$dataRows.append(`
         <tr>
-          <td><span class="label">${label.description}</span></td>
+          <td><span class="label">${label.label}</span></td>
           <td class="is-full-width">${timeline}</td>
         </tr>
       `);

@@ -21,7 +21,7 @@ $hero-pinned-height: 232px;
 */
 
 #{$hero} {
-  background: $color-subtle;
+  background: $color-light;
 
   // PINNED HERO
   &.is-pinned {
@@ -77,7 +77,7 @@ $hero-pinned-height: 232px;
 }
 
 #{$hero}-video {
-  background: $color-subtle;
+  background: $color-light;
   height: $hero-height;
   text-align: center;
 
@@ -89,5 +89,5 @@ $hero-pinned-height: 232px;
 
 #{$hero}-sidebar {
   box-sizing: border-box;
-  padding: $unit * 4;
+  padding: ($unit * 3) ($unit * 4);
 }

@@ -69,8 +69,6 @@ class VideoPage {
         seconds = '0' + seconds;
       }
 
-      this.$video[0].currentTime = 1;
-
       // FORMAT DATA AND RENDER
       this.videoDuration = this.$video[0].duration;
       this.videoLength = `${mins}:${seconds}`;

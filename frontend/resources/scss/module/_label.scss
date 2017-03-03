@@ -21,12 +21,13 @@ $label-height: $unit * 3;
 
 #{$label} {
   display: inline-block;
-  padding: 0 $unit;
+  padding: 0 ($unit * 4) 0 $unit;
   line-height: $unit * 4;
   border-radius: 2px;
   font-size: 12px;
   text-transform: uppercase;
   position: relative;
+  white-space: nowrap;
 
   &.is-block {
     display: block;

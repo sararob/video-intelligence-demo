@@ -48,9 +48,9 @@ class VideoPage {
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-    if (hours   < 10) {hours   = "0"+hours;}
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
+    if (hours   < 10) {hours   = '0'+hours;}
+    if (minutes < 10) {minutes = '0'+minutes;}
+    if (seconds < 10) {seconds = '0'+seconds;}
     return hours+':'+minutes+':'+seconds;
   }
 
@@ -75,18 +75,17 @@ class VideoPage {
     const averageConfidenceList = labels.map(label => {
       let confidence = 0;
       let confidenceAverge;
-      let locations;
 
       // CHECK FOR LOCATIONS
       if(label.locations && label.locations.length) {
 
         // LOOP THROUGH LOCATIONS
         _.forEach(label.locations, (location) => {
-          if(location.level === "SHOT_LEVEL") {
+          if(location.level === 'SHOT_LEVEL') {
             // ACCUMULATE CONFIDENCE
             confidence = confidence + location.confidence;
           }
-        })
+        });
 
         // FIND AVERAGE COFIDENCE FOR LABEL
         confidenceAverge = confidence / label.locations.length;
@@ -96,7 +95,7 @@ class VideoPage {
           label: label.description,
           confidence: confidenceAverge,
           locations: label.locations
-        }
+        };
       }
     });
 
@@ -122,10 +121,11 @@ class VideoPage {
     for (var i = 0; i < sortedLabels.length; i++) {
       let label = sortedLabels[i];
       let timeline = this.renderTimeline(label.locations, label.label);
+      let percent = (label.confidence * 100).toFixed();
 
       this.$dataRows.append(`
         <tr>
-          <td><span class="label">${label.label}</span></td>
+          <td><span class="label is-primary is-block" style="opacity: ${label.confidence};">${label.label} <em>${percent}%</em></span></td>
           <td class="is-full-width">${timeline}</td>
         </tr>
       `);

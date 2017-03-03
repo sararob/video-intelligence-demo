@@ -62,7 +62,12 @@ class VideoPage {
     // WAIT FOR META DATA TO LOAD
     this.$video.on('loadedmetadata', () => {
       const mins = parseInt(this.$video[0].duration / 60, 10);
-      const seconds = parseInt(this.$video[0].duration % 60, 10);
+      let seconds = parseInt(this.$video[0].duration % 60, 10);
+
+      // FORMAT DATA AND RENDER
+      if (seconds < 10) {
+        seconds = '0' + seconds;
+      }
 
       // FORMAT DATA AND RENDER
       this.videoDuration = this.$video[0].duration;

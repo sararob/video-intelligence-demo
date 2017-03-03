@@ -85,6 +85,8 @@ class App {
       case 'video': this.currentPage = new VideoPage(this.$stage, this.router, data); break;
       case 'profile': this.currentPage = new ProfilePage(this.$stage, this.router); break;
     }
+
+    window.scrollTo(0,0);
   }
 
   activateSearchBar() {

@@ -27,6 +27,7 @@ class VideoPage {
     this.$stage.html(this.template());
 
     // REGISTER TEMPLATE ELEMENTS
+    this.$hero = $('#hero');
     this.$video = $(`#${this.video.url_safe_id}`);
     this.$videoLength =  $('#video-length');
     this.$topLabels = $('#top-labels');
@@ -37,6 +38,9 @@ class VideoPage {
     this.renderVideoLength();
     this.renderTopLabels();
     this.renderVideoCards();
+
+    // ACTIVATE SCROLL SPY
+    this.activateScrollSpy();
 
     // UPDATE PAGE LINKS
     this.router.updatePageLinks();
@@ -144,7 +148,7 @@ class VideoPage {
 
       this.$video[0].currentTime = startTime;
       this.$video[0].play();
-    })
+    });
   }
 
   renderTimeline(locations, label) {
@@ -154,7 +158,7 @@ class VideoPage {
       let type = locations[i].level;
       let segment = locations[i].segment;
 
-      if(type === "SHOT_LEVEL") {
+      if(type === 'SHOT_LEVEL') {
         segments.push(this.createSegment(segment, label));
       }
     }
@@ -162,7 +166,7 @@ class VideoPage {
     return `<div class="graph">${segments.join('')}</div>`;
   }
 
-  createSegment(segment, label) {
+  createSegment(segment) {
     let segmentEl = '';
 
 
@@ -185,30 +189,49 @@ class VideoPage {
     }
   }
 
+  activateScrollSpy() {
+    const that = this;
+    const $window = $(window);
+
+    $window.on('scroll', function() {
+      const location = $window.scrollTop();
+
+      if (location > 392) {
+        that.$hero.addClass('is-pinned');
+      }
+      else {
+        that.$hero.removeClass('is-pinned');
+      }
+    });
+  }
+
+
   template() {
     return `
-      <header class="hero l-flex">
-        <div class="hero-video col-1 no-margin">
-          <video class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
+      <header id="hero" class="hero">
+        <div class="l-flex">
+          <div class="hero-video col-1 no-margin">
+            <video class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
+          </div>
+
+          <div class="hero-sidebar col-fixed-4 no-margin">
+            <h4 class="text-caption is-secondary is-uppercase">Highest Confidence Labels</h4>
+            <ul id="top-labels" class="is-unstyled"></ul>
+          </div>
         </div>
 
-        <div class="hero-sidebar col-fixed-4 no-margin">
-          <h4 class="text-caption is-secondary is-uppercase">Highest Confidence Labels</h4>
-          <ul id="top-labels" class="is-unstyled"></ul>
+        <div class="announcement-bar sheet clearfix">
+          <div class="announcement-bar-title l-left">
+            <h3 class="text-title no-margin">${this.title}</h3>
+            <p class="text-caption is-secondary no-margin" id="video-length">Length: ${this.videoLength}</p>
+          </div>
+
+          <button class="button l-right">
+            <i class="material-icons">bookmark_border</i>
+            Bookmark Video
+          </button>
         </div>
       </header>
-
-      <div class="announcement-bar sheet clearfix">
-        <div class="l-left">
-          <h3 class="text-title no-margin">${this.title}</h3>
-          <p class="text-caption is-secondary no-margin" id="video-length">Length: ${this.videoLength}</p>
-        </div>
-
-        <button class="button l-right">
-          <i class="material-icons">bookmark_border</i>
-          Bookmark Video
-        </button>
-      </div>
 
       <article class="l-flex">
         <div id="graphs" class="col-1 l-pad-6 no-margin">

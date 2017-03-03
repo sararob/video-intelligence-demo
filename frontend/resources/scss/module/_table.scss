@@ -59,7 +59,7 @@ $table-heading-color: rgba($color-dark, .87);
       border-bottom: $table-border;
       color: $table-color;
       line-height: $unit * 2;
-      padding: $unit * 2;
+      padding: $unit + ($unit / 2);
       vertical-align: middle;
     }
     th {
@@ -78,6 +78,10 @@ $table-heading-color: rgba($color-dark, .87);
     td {
       font-size: 12px;
       font-weight: 300;
+
+      .label {
+        line-height: $unit * 3;
+      }
     }
   }
 }

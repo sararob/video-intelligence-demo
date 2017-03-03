@@ -234,7 +234,7 @@ class VideoPage {
       </header>
 
       <article class="l-flex">
-        <div id="graphs" class="col-1 l-pad-6 no-margin">
+        <div id="graphs" class="col-1 l-pad-4 no-margin">
           <table class="table">
             <thead>
               <tr>

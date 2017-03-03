@@ -38,7 +38,7 @@ class App {
   }
 
   renderLoadingIndicator() {
-    this.$stage.html('<h1>Loading One Moment...</h1>');
+    this.$stage.html('<h1 class="is-center text-title is-secondary l-pad-10">Loading One Moment...</h1>');
   }
 
   initApp() {

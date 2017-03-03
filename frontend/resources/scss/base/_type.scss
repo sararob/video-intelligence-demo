@@ -62,6 +62,10 @@ $text: '.text';
   &.is-uppercase {
     text-transform: uppercase;
   }
+
+  &.is-center {
+    text-align: center;
+  }
 }
 
 

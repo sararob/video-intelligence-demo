@@ -61,10 +61,28 @@ class SearchPage {
     const that = this;
 
     $('.video-card-video').on('loadedmetadata', function() {
+      let isPlaying = false;
+
       const $video = $(this);
       const key = $video.attr('id');
       const duration = this.duration;
       const videoData = _.find(that.videos, {url_safe_id: key});
+
+
+      // ADD STOP AND START TO VIDEO
+      $video.on('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if(isPlaying) {
+          this.pause();
+          isPlaying = false;
+        }
+        else {
+          this.play();
+          isPlaying = true;
+        }
+      });
 
       const label = _.find(videoData.annotations.label_annotations, (label) => {
         return _.toLower(label.description) === _.toLower(that.query);
@@ -85,6 +103,7 @@ class SearchPage {
 
         $video[0].currentTime = startTime;
         $video[0].play();
+        isPlaying = true;
       });
     });
   }

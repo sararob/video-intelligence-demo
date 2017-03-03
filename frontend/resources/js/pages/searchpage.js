@@ -160,7 +160,7 @@ class SearchPage {
   }
 
   destroy() {
-    console.log('destroy page');
+    $('.video-card-video').off();
   }
 }
 

@@ -78,6 +78,7 @@ class App {
 
     // CLEAR STAGE
     this.clearStage();
+    this.$search.val('');
 
     switch(page) {
       case 'home': this.currentPage = new HomePage(this.$stage, this.router); break;
@@ -93,6 +94,7 @@ class App {
     this.$search.keypress((e) => {
       if(e.which == 13){//Enter key pressed
         const query = this.$search.val();
+        this.$search.blur();
         this.router.navigate(`/search/${query}`);
       }
     });

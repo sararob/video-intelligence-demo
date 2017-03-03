@@ -68,8 +68,6 @@ class SearchPage {
       const duration = this.duration;
       const videoData = _.find(that.videos, {url_safe_id: key});
 
-      $video[0].currentTime = 2;
-
       // ADD STOP AND START TO VIDEO
       $video.on('click', (e) => {
         e.preventDefault();

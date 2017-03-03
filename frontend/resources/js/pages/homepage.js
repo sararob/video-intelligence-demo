@@ -1,11 +1,11 @@
 import store from 'store';
+
 import VideoCard from '../components/video-card';
 
 class HomePage {
   constructor(stage, router) {
     this.$stage = stage;
     this.router = router;
-
 
     this.render();
     this.router.updatePageLinks();

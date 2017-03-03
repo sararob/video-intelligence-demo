@@ -26,7 +26,7 @@ $top-nav-height: $unit * 7;
   color: $color-light;
   height: $top-nav-height;
   left: 0;
-  padding: $unit ($unit * 30) $unit ($unit * 30);
+  padding: $unit ($unit * 30) $unit ($unit * 35);
   position: fixed;
   right: 0;
   top: 0;
@@ -42,10 +42,13 @@ $top-nav-height: $unit * 7;
     top: 0;
 
     a {
+      background:  url('/images/logo.svg') center left no-repeat;
+      background-size: (40px * .6) (58px * .6);
       color: $color-light;
       display: inline-block;
       line-height: $top-nav-height;
       text-decoration: none;
+      padding-left: $unit * 4;
     }
   }
 

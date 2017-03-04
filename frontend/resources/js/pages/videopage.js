@@ -36,7 +36,7 @@ class VideoPage {
 
     // RENDER DATA ON PAGE
     this.renderVideoLength();
-    this.renderTopLabels();
+    // this.renderTopLabels();
     this.renderVideoCards();
 
     // ACTIVATE SCROLL SPY
@@ -217,11 +217,6 @@ class VideoPage {
         <div class="l-flex">
           <div class="hero-video col-1 no-margin">
             <video class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
-          </div>
-
-          <div class="hero-sidebar col-fixed-4 no-margin">
-            <h4 class="text-caption is-secondary is-uppercase">Highest Confidence Labels</h4>
-            <ul id="top-labels" class="is-unstyled"></ul>
           </div>
         </div>
 

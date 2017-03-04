@@ -16,6 +16,7 @@ class VideoPage {
     this.videos = store.get('videos');
     this.video = _.find(this.videos, {url_safe_id: videoId});
     this.title = VIDEO_DATA[this.video.url_safe_id] ? VIDEO_DATA[this.video.url_safe_id].title : _.capitalize(this.video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
+    this.sortedLabels = this.getSortedLabels(this.video.annotations.label_annotations);
 
     // RENDER PAGE
     this.render();
@@ -187,10 +188,41 @@ class VideoPage {
   }
 
   renderVideoCards() {
-    for (var i = 0; i < 3; i++) {
-      this.$relatedVideos.append(`
-        <div class="l-space-bottom-3">${VideoCard(this.videos[i])}</div>
-      `);
+    // GET TOP 5 LABELS
+    let top5Labels = [];
+    let relatedVideos = [];
+
+    for (let i = 0; i < 5; i++) {
+      if(this.sortedLabels[i]) {
+        top5Labels.push(this.sortedLabels[i].label);
+      }
+    }
+
+    // FIND VIDEOS WITH THOSE LABELS
+    _.each(this.videos, (video) => {
+      const labels = video.annotations.label_annotations;
+
+      if(_.find(labels, ['description', ...top5Labels])) {
+        console.log('blah');
+        relatedVideos.push(video);
+      }
+    });
+
+
+    // REMOVE CURRENT VIDEO
+    const finalList = _.filter(relatedVideos, (video) => {
+      return video.url_safe_id !== this.video.url_safe_id;
+    });
+
+    console.log(finalList);
+
+    // RENDER ONLY 5 MAX
+    for (let i = 0; i < 3; i++) {
+      if(finalList[i]) {
+        this.$relatedVideos.append(`
+          <div class="l-space-bottom-3">${VideoCard(finalList[i])}</div>
+        `);
+      }
     }
   }
 
@@ -248,7 +280,9 @@ class VideoPage {
           </table>
         </div>
 
-        <aside id="related-videos" class="col-fixed-4 no-margin l-pad-3"></aside>
+        <aside id="related-videos" class="col-fixed-4 no-margin l-pad-3">
+          <h4 class="text-subheader is-secondary l-space-top-1 l-space-left-2">Related Videos</h4>
+        </aside>
       </article>
     `;
   }

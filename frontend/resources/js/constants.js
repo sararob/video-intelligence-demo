@@ -16,7 +16,7 @@ const CONSTANTS = {
     'google-duo-salt-pepper-mp4':{
       'title':'Google Duo | Salt & Pepper'
     },
-    'datacenter-mural-mp4':{
+    'data-center-mural-mp4':{
       'title':'Data Center Mural Project'
     },
     'google-earth-moon-mp4':{
@@ -35,7 +35,7 @@ const CONSTANTS = {
       'title':'Flyboarding'
     },
     'treehouse-tour-webm':{
-      'title':'Treehouse tour'
+      'title':'Treehouse Tour'
     },
     'jeff-dean-keynote-mov':{
       'title':'Jeff Dean at GCP Next 2016 Keynote',
@@ -68,7 +68,7 @@ const CONSTANTS = {
       'title':'Google Home | 2017 Superbowl Commercial'
     },
     'android-pay-mp4':{
-      'title':'Android Pay'
+      'title':'Android Pay Commercial'
     },
     'kennedy-nixon-1960-debate-mp4':{
       'title':'Kennedy & Nixon 1960 Presidential Debate'
@@ -112,6 +112,9 @@ const CONSTANTS = {
     'rio-paloma-mp4':{
       'title':'Beyond the Map, Rio - Paloma\'s Story'
     },
+    'beyond-the-map-rio-mp4':{
+      'title':'Beyond the Map, Rio'
+    },
     'year-in-search-2014-mp4':{
       'title':'Year in Search 2014'
     },
@@ -122,7 +125,7 @@ const CONSTANTS = {
       'title':'Good Eating Habits'
     },
     'impact-challenge-india-mp4':{
-      'title':'Impact Challenge, India'
+      'title':'Impact Challenge: India'
     },
     'google-paris-office-mp4':{
       'title':'Tour of Google Paris'
@@ -131,7 +134,7 @@ const CONSTANTS = {
       'title':'Year in Search 2016'
     },
     'onhub-kid-test-mp4':{
-      'title':'OnHub setup: kid test'
+      'title':'OnHub Setup: Kid Test'
     },
     'iwd-2014-mp4':{
       'title':'International Women\'s Day 2014'

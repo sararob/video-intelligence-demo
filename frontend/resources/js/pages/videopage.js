@@ -130,11 +130,11 @@ class VideoPage {
     for (var i = 0; i < sortedLabels.length; i++) {
       let label = sortedLabels[i];
       let timeline = this.renderTimeline(label.locations, label.label);
-      let percent = (label.confidence * 100).toFixed();
+      // let percent = (label.confidence * 100).toFixed();
 
       this.$dataRows.append(`
         <tr>
-          <td><span class="label is-primary is-block" style="opacity: ${label.confidence};">${label.label} <em>${percent}%</em></span></td>
+          <td><span class="label is-primary is-block" style="opacity: ${label.confidence};">${label.label}</span></td>
           <td class="is-full-width">${timeline}</td>
         </tr>
       `);

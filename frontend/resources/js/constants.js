@@ -118,9 +118,7 @@ const CONSTANTS = {
       'title':'Beyond the Map, Rio'
     },
     'year-in-search-2014-mp4':{
-      'title':'Year in Search 2014',
-      'preview': '/images/preview/year-in-search.png',
-      'thumbnail': '/images/thumbnails/year-in-search-thumbnail.png'
+      'title':'Year in Search 2014'
     },
     'hamilton-webm':{
       'title':'Hamilton cast performs at the White House'
@@ -137,7 +135,9 @@ const CONSTANTS = {
       'title':'Tour of Google Paris'
     },
     'year-in-search-2016-mp4':{
-      'title':'Year in Search 2016'
+      'title':'Year in Search 2016',
+      'preview': '/images/preview/year-in-search.png',
+      'thumbnail': '/images/thumbnails/year-in-search-thumbnail.png'
     },
     'onhub-kid-test-mp4':{
       'title':'OnHub Setup: Kid Test'

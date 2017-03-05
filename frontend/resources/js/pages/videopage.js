@@ -244,11 +244,13 @@ class VideoPage {
 
 
   template() {
+    const preview = VIDEO_DATA[this.video.url_safe_id].preview ? `poster="${VIDEO_DATA[this.video.url_safe_id].preview}"` : '';
+
     return `
       <header id="hero" class="hero">
         <div class="l-flex">
           <div class="hero-video col-1 no-margin">
-            <video class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
+            <video ${preview} class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
           </div>
         </div>
 

@@ -17,7 +17,9 @@ const CONSTANTS = {
       'title':'Google Duo | Salt & Pepper'
     },
     'data-center-mural-mp4':{
-      'title':'Data Center Mural Project'
+      'title':'Data Center Mural Project',
+      'preview': '/images/preview/data-center.png',
+      'thumbnail': '/images/thumbnails/data-center-thumbnail.png'
     },
     'google-earth-moon-mp4':{
       'title':'Moon in Google Earth'
@@ -122,7 +124,9 @@ const CONSTANTS = {
       'title':'Hamilton cast performs at the White House'
     },
     'eating-habits-mp4':{
-      'title':'Good Eating Habits'
+      'title':'Good Eating Habits',
+      'preview': '/images/preview/good-eating-habits.png',
+      'thumbnail': '/images/thumbnails/good-eating-habits-thumbnail.png'
     },
     'impact-challenge-india-mp4':{
       'title':'Impact Challenge: India'

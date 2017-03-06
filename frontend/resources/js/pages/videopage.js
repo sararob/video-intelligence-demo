@@ -149,9 +149,6 @@ class VideoPage {
       e.preventDefault();
       const startTime = $(e.currentTarget).data('time');
 
-      console.log(startTime);
-      console.log(this.$video);
-
       this.$video[0].currentTime = startTime;
       this.$video[0].play();
     });
@@ -203,18 +200,14 @@ class VideoPage {
       const labels = video.annotations.label_annotations;
 
       if(_.find(labels, ['description', ...top5Labels])) {
-        console.log('blah');
         relatedVideos.push(video);
       }
     });
-
 
     // REMOVE CURRENT VIDEO
     const finalList = _.filter(relatedVideos, (video) => {
       return video.url_safe_id !== this.video.url_safe_id;
     });
-
-    console.log(finalList);
 
     // RENDER ONLY 5 MAX
     for (let i = 0; i < 3; i++) {
@@ -290,7 +283,7 @@ class VideoPage {
   }
 
   destroy() {
-    console.log('destroy page');
+    // console.log('destroy page');
   }
 }
 

@@ -11,6 +11,8 @@ class SearchPage {
     this.query = query;
     this.videos = store.get('videos');
     this.results = this.getSearchResults();
+    this.results = _.sortBy(this.results, ['name']);
+
 
     this.render();
     return this;

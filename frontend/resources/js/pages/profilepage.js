@@ -1,5 +1,6 @@
 import store from 'store';
 import $ from 'jquery';
+import _ from 'lodash';
 import {VIDEO_API} from '../constants';
 
 class ProfilePage {
@@ -49,14 +50,15 @@ class ProfilePage {
 
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
+        const sortedVideos = _.sortBy(videos, ['name']);
 
         // STORE VIDEO DATA
         if(store.enabled) {
-          store.set('videos', videos);
+          store.set('videos', sortedVideos);
           alert('videos retrieved');
         }
         else {
-          this.videoStore = videos;
+          this.videoStore = sortedVideos;
         }
       }
     });

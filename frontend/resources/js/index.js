@@ -1,5 +1,6 @@
 // DEPENDANCIES
 import $ from 'jquery';
+import _ from 'lodash';
 import store from 'store'; //https://www.npmjs.com/package/store
 import navigo from 'navigo';
 
@@ -116,13 +117,14 @@ class App {
 
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
+        const sortedVideos = _.sortBy(videos, ['name']);
 
         // STORE VIDEO DATA
         if(store.enabled) {
-          store.set('videos', videos);
+          store.set('videos', sortedVideos);
         }
         else {
-          this.videoStore = videos;
+          this.videoStore = sortedVideos;
         }
 
         that.initApp();

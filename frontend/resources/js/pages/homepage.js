@@ -13,7 +13,7 @@ class HomePage {
   }
 
   destroy() {
-    console.log('destroy page');
+    // console.log('destroy page');
   }
 
   template(videos) {

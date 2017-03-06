@@ -84,6 +84,7 @@ $hero-pinned-height: 232px;
   video {
     min-height: $hero-height;
     max-height: $hero-height;
+    border-right: 1px solid white;
   }
 }
 

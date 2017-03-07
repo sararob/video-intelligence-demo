@@ -70,7 +70,7 @@ app.use(cors());
 
 app.use(basicAuth({
   users: {
-    'admin': 'realtime123'
+    'alexanderhamilton': 'l@l@l@nd'
   },
   challenge: true
 }));

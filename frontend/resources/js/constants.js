@@ -22,7 +22,9 @@ const CONSTANTS = {
       'thumbnail': '/images/thumbnails/data-center-thumbnail.png'
     },
     'google-earth-moon-mp4':{
-      'title':'Moon in Google Earth'
+      'title':'Moon in Google Earth',
+      'preview': '/images/preview/moon-in-google-earth.png',
+      'thumbnail': '/images/thumbnails/moon-in-google-earth.png'
     },
     'tango-commercial-mp4':{
       'title':'Tango: Re-imagine space around you'
@@ -37,7 +39,9 @@ const CONSTANTS = {
       'title':'Flyboarding'
     },
     'treehouse-tour-webm':{
-      'title':'Treehouse Tour'
+      'title':'Treehouse Tour',
+      'preview': '/images/preview/treehouse-tour.png',
+      'thumbnail': '/images/thumbnails/treehouse-tour.png'
     },
     'jeff-dean-keynote-mov':{
       'title':'Jeff Dean at GCP Next 2016 Keynote',
@@ -49,10 +53,14 @@ const CONSTANTS = {
       'title':'#Pixel: Glamping by Alisha Marie'
     },
     'snowglobe-mp4':{
-      'title':'Google+ Snowglobe'
+      'title':'Google+ Snowglobe',
+      'preview': '/images/preview/google-snowglobe.png',
+      'thumbnail': '/images/thumbnails/google-snowglobe.png'
     },
     'nat-lo-recap-mp4':{
-      'title':'Nat & Lo: 2016 Recap'
+      'title':'Nat & Lo: 2016 Recap',
+      'preview': '/images/preview/nat-and-lo.png',
+      'thumbnail': '/images/thumbnails/nat-and-lo.png'
     },
     'truck_show-mov':{
       'title':'Family at a truck show'
@@ -61,7 +69,9 @@ const CONSTANTS = {
       'title':'Marche de Boumba'
     },
     'barcelona-webm':{
-      'title':'Barcelona'
+      'title':'Barcelona',
+      'preview': '/images/preview/barcelona.png',
+      'thumbnail': '/images/thumbnails/barcelona.png'
     },
     'google-translate-spicy-mp4':{
       'title':'Google Demo Slam: Extra Spicy'
@@ -85,7 +95,9 @@ const CONSTANTS = {
       'title':'DEZEEN AND MINI WORLD TOUR'
     },
     'larry-sergey-ice-bucket-challenge-mp4':{
-      'title':'Larry and Sergey do the Ice Bucket Challenge'
+      'title':'Larry and Sergey do the Ice Bucket Challenge',
+      'preview': '/images/preview/larry-sergey-ice-bucket.png',
+      'thumbnail': '/images/thumbnails/larry-sergey-ice-bucket.png'
     },
     'white-house-webm':{
       'title':'Tour of the White House'
@@ -103,7 +115,9 @@ const CONSTANTS = {
       'title':'Charlie Chaplin Google Doodle'
     },
     'mumbai-dancing-webm':{
-      'title':'Mumbai Dancing'
+      'title':'Mumbai Dancing',
+      'preview': '/images/preview/mumbai-dancing.png',
+      'thumbnail': '/images/thumbnails/mumbai-dancing.png'
     },
     'google-photos-space-mp4':{
       'title':'Google Photos: Extra Space'
@@ -121,7 +135,9 @@ const CONSTANTS = {
       'title':'Year in Search 2014'
     },
     'hamilton-webm':{
-      'title':'Hamilton cast performs at the White House'
+      'title':'Hamilton cast performs at the White House',
+      'preview': '/images/preview/hamilton-whitehouse.png',
+      'thumbnail': '/images/thumbnails/hamilton-whitehouse.png'
     },
     'eating-habits-mp4':{
       'title':'Good Eating Habits',
@@ -129,7 +145,9 @@ const CONSTANTS = {
       'thumbnail': '/images/thumbnails/good-eating-habits-thumbnail.png'
     },
     'impact-challenge-india-mp4':{
-      'title':'Impact Challenge: India'
+      'title':'Impact Challenge: India',
+      'preview': '/images/preview/impact-challenge-india.png',
+      'thumbnail': '/images/thumbnails/impact-challenge-india.png'
     },
     'google-paris-office-mp4':{
       'title':'Tour of Google Paris'
@@ -146,7 +164,9 @@ const CONSTANTS = {
       'title':'International Women\'s Day 2014'
     },
     'year-in-search-2013-mp4':{
-      'title':'Year in Search 2013'
+      'title':'Year in Search 2013',
+      'preview': '/images/preview/year-in-search-2013.png',
+      'thumbnail': '/images/thumbnails/year-in-search-2013.png'
     },
     'launchpad-jakarta-mp4':{
       'title':'Google Launchpad Jakarta'
@@ -155,7 +175,9 @@ const CONSTANTS = {
       'title':'Roller Derby'
     },
     'year-in-search-2015-mp4':{
-      'title':'Year in Search 2015'
+      'title':'Year in Search 2015',
+      'preview': '/images/preview/year-in-search-2015.png',
+      'thumbnail': '/images/thumbnails/year-in-search-2015.png'
     },
     'national-parks-mp4':{
       'title':'Tour of National Parks'
@@ -176,7 +198,9 @@ const CONSTANTS = {
       'title':'Google App: Replacement Umpire'
     },
     'google-fiber-nicks-first-pitch-mp4':{
-      'title':'Google Fiber: Nick\'s First Pitch'
+      'title':'Google Fiber: Nick\'s First Pitch',
+      'preview': '/images/preview/google-fiber.png',
+      'thumbnail': '/images/thumbnails/google-fiber.png'
     },
     'underwater-hangouts-on-air-mp4':{
       'title':'Underwater Hangouts On Air'

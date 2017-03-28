@@ -70,7 +70,7 @@ app.use(cors());
 
 app.use(basicAuth({
   users: {
-    'alexanderhamilton': 'l@l@l@nd'
+    'alexanderhamilton': 'myshot'
   },
   challenge: true
 }));

@@ -4,23 +4,9 @@ block content
 	header.hero.has-sidebar.fill-subtle
 		video.hero-video.show-video(controls src=link)
 		div.label-results
-		//- each label in labelAnnotations
-		//- 	div.label
-		//- 		span=label['description']
-		//- 		each segment in label['locations']
-		//- 			//- TODO - maybe only display labels with a high enough confidence - segment['confidence']
-		//- 			if segment['segment']['start_time_offset'] != -1
-						//- TODO - display the time this label shows up
-						//- span.time-range-display=(segment['segment']['start_time_offset'])
 	div.sheet.info-bar.clearfix
 		h3.text-title Name of video
 		h4.text-caption length: 2:23
-
 		button.button.button-secondary Bookmark Video
-
 	div.label-graph(id=id)
 	div#example
-			//- div.face
-			//- 	span Face #{faceAnnotations.indexOf(face) + 1}
-			//- 	each segment in face['segments']
-			//- 		span=segment['start_time_offset'] / 1000000

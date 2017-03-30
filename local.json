@@ -1,0 +1,6 @@
+{
+	"cloud_project_id": "keynote-video-demo",
+	"video_bucket": "keynote-videos",
+	"video_json_bucket": "video-json-output",
+	"video_api_key": "AIzaSyBMXGMEKJZblpSgvFdE1OhoIICT8E1yEoY"
+}

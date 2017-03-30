@@ -2,8 +2,8 @@ const request = require('request');
 
 const storage = require('@google-cloud/storage');
 const storageClient = storage({
-  projectId: 'keynote-video-demo',
-  keyfileName: 'keyfile.json'
+  projectId: config.cloud_project_id,
+  keyfileName: '../keyfile.json'
 });
 
 const allowedFileTypes = ["mp4", "mpeg4", "avi", "webm", "mov"];
@@ -30,7 +30,7 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
 
       // 1) Kick off the annotation request (v1alpha1)
       var url = 'https://videointelligence.googleapis.com/$discovery/rest'
-      var apiKey = 'AIzaSyBMXGMEKJZblpSgvFdE1OhoIICT8E1yEoY';
+      var apiKey = config.video_api_key;
 
       google.discoverAPI({
        url: url,
@@ -40,11 +40,11 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
         console.log("filename is " + fileName);
        // use the service
         const requestBody = {
-          "auth": "AIzaSyBMXGMEKJZblpSgvFdE1OhoIICT8E1yEoY",
+          "auth": config.video_api_key,
           "resource": {
             "inputUri": videoFilename,
             "outputUri": "gs://video-json-output/" + fileName.replace(".", "").replace("/", "") + ".json",
-            'features': ['LABEL_DETECTION', 'FACE_DETECTION', 'SHOT_CHANGE_DETECTION']
+            'features': ['LABEL_DETECTION', 'SHOT_CHANGE_DETECTION']
           }
         }
 
@@ -61,7 +61,7 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
               key: apiKey
             }, function(serviceErr, videoIntelligence) {
               const reqBody = {
-                "auth": "AIzaSyBMXGMEKJZblpSgvFdE1OhoIICT8E1yEoY",
+                "auth": config.video_api_key,
                 "name": opId
               }
               videoIntelligence.operations.get(reqBody, function (opErr, opResp) {

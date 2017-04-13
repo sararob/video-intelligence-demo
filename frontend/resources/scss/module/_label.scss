@@ -1,0 +1,50 @@
+/*
+* label
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$label: '.label';
+$label-height: $unit * 3;
+
+
+/*
+* Class
+*
+*/
+
+#{$label} {
+  display: inline-block;
+  padding: 0 ($unit * 4) 0 $unit;
+  line-height: $unit * 4;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap;
+
+  &.is-block {
+    display: block;
+  }
+
+  &.is-primary {
+    background: $color-primary;
+    color: $color-light;
+  }
+
+  em {
+    position: absolute;
+    padding: 0 $unit;
+    font-style: normal;
+    right: 0;
+    top: 0;
+    opacity: .56;
+    z-index: $z-1;
+  }
+}

@@ -1,0 +1,102 @@
+/*
+* Buttons
+*
+*/
+
+
+/*
+* Defaults
+*
+*/
+
+$button: '.button' !default;
+
+
+
+/*
+* Base Style Definition
+*
+*/
+
+#{$button} {
+  appearance: none;
+  background: $color-subtle;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: $color-dark;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  height: $unit * 5;
+  line-height: $unit * 5;
+  overflow: hidden;
+  padding: 0 ($unit * 6);
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition-property: all;
+  transition-duration:.3s;
+
+  .material-icons {
+    line-height: $unit * 5;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, .12), 0 4px 4px rgba(0, 0, 0, .24);
+    outline: none;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active,
+  &.is-active {
+    box-shadow: none;
+    text-decoration: none;
+    transition-duration: 0s;
+    opacity: .56;
+  }
+
+  /*
+  * Sizes
+  *
+  */
+
+  &.is-large {
+    height: $unit * 6;
+    line-height: $unit * 6;
+  }
+
+
+  /*
+  * Block Level State
+  *
+  */
+
+  &.is-block {
+    display: block;
+  }
+
+  /*
+  * Disabled State
+  *
+  */
+
+  &.disabled,
+  &.is-disabled,
+  &:disabled {
+    appearance: none !important;
+    background: #EEE !important;
+    border: 1px solid #DDD !important;
+    box-shadow: none !important;
+    color: #CCC !important;
+    cursor: default !important;
+    opacity:.8 !important;
+    top: 0 !important;
+  }
+}
+

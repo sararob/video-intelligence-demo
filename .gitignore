@@ -1,0 +1,4 @@
+node_modules/
+*.log
+frontend/public/javascripts/*
+frontend/public/stylesheets/*

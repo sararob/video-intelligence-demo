@@ -1,0 +1,41 @@
+/*
+* Shapes
+*
+*/
+
+
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$shape: '.shape';
+$shape-large: $unit * 10;
+$shape-medium: $unit * 8;
+$shape-small: $unit * 5;
+$shape-tiny: $unit * 3;
+
+
+#{$shape}-circle {
+  border-radius: 1000px;
+  height: $shape-medium;
+  width: $shape-medium;
+
+  &.is-large {
+    height: $shape-large;
+    width: $shape-large;
+  }
+
+  &.is-small {
+    height: $shape-small;
+    width: $shape-small;
+  }
+
+  &.is-tiny {
+    height: $shape-tiny;
+    width: $shape-tiny;
+  }
+}

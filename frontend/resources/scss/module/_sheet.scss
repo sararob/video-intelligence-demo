@@ -1,0 +1,57 @@
+/*
+* sheet
+*
+* sheet layers that can be used for the background of elements.
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$sheet: '.sheet';
+$sheet-primary: $color-light;
+$sheet-secondary: rgba($color-subtle, .56);
+$sheet-accent: $color-primary;
+
+
+#{$sheet},
+#{$sheet}-flat,
+#{$sheet}-hover,
+#{$sheet}-raised,
+#{$sheet}-floating {
+  background: $sheet-primary;
+  box-shadow: 0 0 ($unit / 4) rgba(0, 0, 0, .12), 0 ($unit / 4) ($unit / 4) rgba(0, 0, 0, .24);
+  box-sizing: border-box;
+  z-index: 1;
+
+  &.has-border {
+    border: 1px solid $sheet-primary;
+  }
+
+  &.has-divider {
+    border-bottom: 1px solid $sheet-secondary;
+  }
+}
+
+#{$sheet}-flat {
+  box-shadow: none;
+}
+
+#{$sheet}-hover {
+  box-shadow: 0 0 ($unit / 2) rgba(0, 0, 0, .12), 0 ($unit / 2) ($unit / 2) rgba(0, 0, 0, .24);
+
+  &.has-border {
+    border-color: $sheet-accent;
+  }
+}
+
+#{$sheet}-raised {
+  box-shadow: 0 0 ($unit * 2) rgba(0, 0, 0, .12), 0 ($unit * 2) ($unit * 2) rgba(0, 0, 0, .24);
+}
+
+#{$sheet}-floating {
+  box-shadow: 0 0 ($unit * 6) rgba(0, 0, 0, .12), 0 ($unit * 6) ($unit * 6) rgba(0, 0, 0, .24);
+}

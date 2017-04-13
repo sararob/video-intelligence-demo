@@ -1,0 +1,94 @@
+/*
+* Hero
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$hero: '.hero';
+$hero-height: 392px;
+$hero-pinned-height: 232px;
+
+
+/*
+* Class
+*
+*/
+
+#{$hero} {
+  background: $color-light;
+
+  // PINNED HERO
+  &.is-pinned {
+    background: $color-light;
+    box-shadow: 0 0 ($unit / 2) rgba(0, 0, 0, .12), 0 ($unit / 2) ($unit / 2) rgba(0, 0, 0, .24);
+    height: $hero-pinned-height;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 56px;
+    z-index: $z-max-1;
+
+    #{$hero}-video {
+      background: $color-light;
+      height: $hero-pinned-height;
+      width: 440px;
+      text-align: left;
+
+      video {
+        min-height: $hero-pinned-height;
+        max-height: $hero-pinned-height;
+      }
+    }
+
+    .announcement-bar-title {
+      float: none;
+      margin: ($unit * 3) 0;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: $unit !important;
+      }
+    }
+
+    .announcement-bar {
+      background: none;
+      box-shadow: none;
+      position: absolute;
+      top: 0;
+      left: 440px;
+      bottom: 0;
+      z-index: $z-1;
+
+      .button {
+        float: none;
+      }
+    }
+
+    #{$hero}-sidebar {
+      display: none;
+    }
+  }
+}
+
+#{$hero}-video {
+  background: $color-light;
+  height: $hero-height;
+  text-align: center;
+
+  video {
+    min-height: $hero-height;
+    max-height: $hero-height;
+    border-right: 1px solid white;
+  }
+}
+
+#{$hero}-sidebar {
+  box-sizing: border-box;
+  padding: ($unit * 3) ($unit * 4);
+}

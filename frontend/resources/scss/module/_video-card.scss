@@ -1,0 +1,83 @@
+/*
+* Video Card
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$video-card: '.video-card';
+$video-card-width: 262px;
+
+
+
+/*
+* Class
+*
+*/
+
+#{$video-card} {
+  box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .24);
+  box-sizing: border-box;
+  display: block;
+  height: $unit * 30;
+  margin: $unit * 2;
+  overflow: hidden;
+  padding: $unit * 2;
+  position: relative;
+  text-decoration: none;
+  width: $video-card-width;
+
+  &.is-expanded {
+    height: 176px;
+    width: auto;
+    padding-left: $video-card-width;
+
+    #{$video-card}-hero {
+      position: absolute;
+      top: $unit * 2;
+      left: $unit * 2;
+      z-index: $z-1;
+    }
+  }
+
+  #{$video-card}-hero {
+    background: #000;
+    height: 144px;
+    overflow: hidden;
+    margin-bottom: $unit;
+    position: relative;
+    width: $video-card-width - ($unit * 4);
+  }
+
+  #{$video-card}-video {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 1;
+  }
+
+  .graph {
+    margin: $unit 0;
+  }
+
+  h3 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 16px;
+  }
+}

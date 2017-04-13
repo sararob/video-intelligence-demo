@@ -1,0 +1,38 @@
+/*
+* Backgrounds
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$fill: '.fill';
+
+
+/*
+* Background fills
+*
+*/
+
+#{$fill}-dark {
+  background: $color-dark;
+}
+
+#{$fill}-light {
+  background: $color-light;
+}
+
+#{$fill}-subtle {
+  background: $color-subtle;
+}
+
+#{$fill}-accent {
+  background: $color-accent;
+}
+
+#{$fill}-primary {
+  background: $color-primary;
+}

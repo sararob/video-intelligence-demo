@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	if vids.length > 0
+		p#term-display Results for 
+			span=term
+		each val, key in vids
+			div
+				a(href="/video/" + val['name'])
+					video.search-video(controls src=val['link'] id=val['name'])
+				each second, index in val['seconds']
+					span.second=second
+	else
+		div#no-videos No videos matched your search

@@ -1,0 +1,42 @@
+/*
+* Form Elements
+*
+*/
+
+
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$form: '.form';
+
+
+#{$form}-search {
+  position: relative;
+
+  .material-icons {
+    left: $unit;
+    opacity: .24;
+    position: absolute;
+    top: $unit;
+    z-index: $z-1;
+  }
+
+  input {
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 300;
+    height: $unit * 5;
+    margin: 0;
+    outline: none;
+    padding: 0 ($unit * 2) 0 ($unit * 5);
+    transition: all .3s;
+    width: 100%;
+  }
+}

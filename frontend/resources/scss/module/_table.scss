@@ -1,0 +1,87 @@
+/*
+* TABLE Module
+*
+* A standard table to show rows/columns of information
+*/
+
+
+// DEFAULTS
+$unit: 8px !default;
+
+//OPTIONS
+$table: '.table'; //class name
+$table-border: 1px solid rgba($color-subtle, .56);
+$table-color: rgba($color-dark, .56);
+$table-heading-color: rgba($color-dark, .87);
+
+
+/*
+* Class Definition
+*
+*/
+
+#{$table} {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead,
+  tbody {
+    th, td {
+      &.is-small {
+        width: $unit * 8;
+      }
+      &.is-full-width {
+        width: 100%;
+      }
+
+    }
+  }
+
+  tr {
+    background: $color-light;
+  }
+
+  thead {
+    th {
+      border-bottom: $table-border;
+      color: $table-color;
+      font-size: 11px;
+      font-weight: 300;
+      line-height: $unit * 2;
+      padding: $unit ($unit * 2);
+      text-transform: uppercase;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    td, th {
+      border-bottom: $table-border;
+      color: $table-color;
+      line-height: $unit * 2;
+      padding: $unit + ($unit / 2);
+      vertical-align: middle;
+    }
+    th {
+      font-size: 16px;
+      font-weight: 400;
+
+      h3 {
+        color: $table-heading-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: $unit * 2;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+    td {
+      font-size: 12px;
+      font-weight: 300;
+
+      .label {
+        line-height: $unit * 3;
+      }
+    }
+  }
+}

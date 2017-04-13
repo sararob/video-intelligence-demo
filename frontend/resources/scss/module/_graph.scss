@@ -1,0 +1,37 @@
+/*
+* graph
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$graph: '.graph';
+$graph-height: $unit * 3;
+
+
+/*
+* Class
+*
+*/
+
+#{$graph} {
+  background: $color-subtle;
+  height: $graph-height;
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+
+  #{$graph}-segment {
+    background: $color-accent;
+    border-radius: 200px;
+    height: $unit;
+    position: absolute;
+    top: $unit;
+    z-index: $z-1;
+  }
+}

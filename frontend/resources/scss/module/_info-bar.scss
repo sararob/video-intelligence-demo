@@ -1,0 +1,30 @@
+/*
+* Info Bar
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$info-bar: '.info-bar';
+$info-bar-height: $unit * 9;
+
+
+/*
+* Class
+*
+*/
+
+#{$info-bar} {
+  box-sizing: border-box;
+  height: $info-bar-height;
+  padding: $unit * 2;
+}
+
+#{$info-bar}-video {
+  height: $info-bar-height;
+}

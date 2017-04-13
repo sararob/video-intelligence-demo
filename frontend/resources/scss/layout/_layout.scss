@@ -1,0 +1,69 @@
+
+
+/*
+* Floats & clears
+*
+*/
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+.l-overflow {
+  overflow: auto;
+}
+
+
+/*
+* Absolute & Fixed
+*
+*/
+
+.l-pinned {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-1;
+}
+
+/*
+* Padding & Margins
+*
+*/
+
+@for $i from 1 through 50 {
+  .l-pad-#{$i} { padding: $unit * $i;}
+  .l-pad-left-#{$i} { padding-left: $unit * $i;}
+  .l-pad-right-#{$i} { padding-right: $unit * $i;}
+  .l-pad-top-#{$i} { padding-top: $unit * $i;}
+  .l-pad-bottom-#{$i} { padding-bottom: $unit * $i;}
+  .l-pad-vertical-#{$i} { padding-top: $unit * $i; padding-bottom: $unit * $i;}
+  .l-pad-horizontal-#{$i} { padding-left: $unit * $i; padding-right: $unit * $i;}
+  .l-space-#{$i} { margin: $unit * $i;}
+  .l-space-left-#{$i} { margin-left: $unit * $i;}
+  .l-space-right-#{$i} { margin-right: $unit * $i;}
+  .l-space-top-#{$i} { margin-top: $unit * $i;}
+  .l-space-bottom-#{$i} { margin-bottom: $unit * $i;}
+  .l-space-vertical-#{$i} { margin-top: $unit * $i; margin-bottom: $unit * $i;}
+  .l-space-horizontal-#{$i} { margin-left: $unit * $i; margin-right: $unit * $i;}
+}

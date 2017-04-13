@@ -1,0 +1,40 @@
+/*
+* Announcment Bar
+*
+*/
+
+$unit: 8px !default;
+$announcement-bar: '.announcement-bar';
+
+
+#{$announcement-bar} {
+  padding: ($unit * 2) ($unit * 3);
+  position: relative;
+  height: $unit * 9;
+
+  .text-title,
+  .text-caption {
+    margin: 0;
+  }
+
+  .text-title {
+    line-height: $unit * 3;
+  }
+
+  .button {
+    color: rgba($color-dark, .56);
+    width: 280px;
+
+    .material-icons {
+      line-height: $unit * 5;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: $unit * 8;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

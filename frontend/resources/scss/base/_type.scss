@@ -1,0 +1,147 @@
+/*
+* Typography
+*
+*/
+
+
+/*
+* SETTINGS
+*
+*/
+
+$unit: 8px !default;
+$text: '.text';
+
+
+// SHARE STYLES
+#{$text}-display,
+#{$text}-display-2,
+#{$text}-headline,
+#{$text}-headline-2,
+#{$text}-title,
+#{$text}-title-2,
+#{$text}-subheader,
+#{$text}-subheader-2,
+#{$text}-body,
+#{$text}-body-2,
+#{$text}-caption,
+#{$text}-caption-2,
+#{$text}-small,
+#{$text}-small-2 {
+  color: $color-dark;
+  font-family: $font-family;
+  font-weight: 300;
+  margin: 0;
+  opacity: .87;
+  padding: 0;
+
+  &.no-margin {
+    margin: 0 !important;
+  }
+
+  &.is-secondary {
+    opacity: .56;
+  }
+
+  &.is-disabled {
+    opacity: .24;
+  }
+
+  &.is-inverted {
+    color: $color-light;
+  }
+
+  &.has-accent {
+    color: $color-primary;
+  }
+
+  &.has-error {
+    color: $color-accent;
+  }
+
+  &.is-uppercase {
+    text-transform: uppercase;
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+}
+
+
+#{$text}-display,
+#{$text}-display-2 {
+  font-size: 48px;
+  line-height: 56px;
+  word-wrap: break-word;
+}
+
+
+#{$text}-headline,
+#{$text}-headline-2 {
+  font-size: 32px;
+  line-height: $unit * 5;
+  word-wrap: break-word;
+}
+
+#{$text}-title,
+#{$text}-title-2 {
+  font-size: 20px;
+  line-height: $unit * 4;
+  margin: 0 0 ($unit * 2) 0;
+  opacity: .87;
+}
+
+#{$text}-subheader,
+#{$text}-subheader-2 {
+  font-size: 14px;
+  line-height: $unit * 2;
+  margin: 0 0 ($unit * 2) 0;
+}
+
+#{$text}-body,
+#{$text}-body-2 {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 ($unit * 3) 0;
+  word-wrap: break-word;
+}
+
+#{$text}-caption,
+#{$text}-caption-2 {
+  font-size: 12px;
+  line-height: $unit * 2;
+  margin: 0 0 $unit 0;
+}
+
+#{$text}-small,
+#{$text}-small-2 {
+  font-size: 10px;
+  line-height: $unit * 2;
+}
+
+
+// BOLD FOMMATTING
+#{$text}-display-2,
+#{$text}-headline-2,
+#{$text}-title-2,
+#{$text}-subheader-2,
+#{$text}-body-2,
+#{$text}-caption-2,
+#{$text}-small-2,
+#{$text}-button-2,
+#{$text}-quote-2 {
+  font-weight: 600;
+}
+
+ul {
+  &.is-unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 0 ($unit) 0;
+  }
+}

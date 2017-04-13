@@ -13,6 +13,7 @@
 // limitations under the License.
 
 const request = require('request');
+const config = require('./local.json')
 
 const storage = require('@google-cloud/storage');
 const storageClient = storage({

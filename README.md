@@ -45,7 +45,7 @@ The code for the app is split into frontend and backend repos. Here's what it lo
 
 5. Create a Cloud project and enable the Video Intelligence API (requires being part of the private beta) and Cloud Functions. Generate an API key and a JSON keyfile.
 6. In your project, create three Cloud Storage buckets: one for your videos, one for the video JSON output, and one as a staging bucket for your Cloud Function.
-7. Put all of the info from steps 5 & 6 into `local.json`. Copy your keyfile into a file called `keyfile.json`. Place a copy of your `keyfile.json` and `local.json` into the frontend AND backend directories (you'll deploy these separately, one to App Engine and one to Cloud Functions).
+7. Put all of the info from steps 5 & 6 into `frontend/local.json` and `backend/local.json`. Copy your keyfile into a file called `keyfile.json` and place it in the frontend AND backend directories (you'll deploy these separately, one to App Engine and one to Cloud Functions).
 8. `cd` into `backend`. Deploy the Cloud Function with the following command (replace with the name of your buckets): `gcloud beta functions deploy analyzeVideo --stage-bucket your-stage-bucket-name --trigger-bucket your-video-bucket`
 9. With your function deployed, try uploading a video to your video storage bucket. When the Video API finishes processing it, you should see the annotation JSON file in your annotation bucket. To see the video in your UI: navigate to localhost:8080/profile, then click 'clear local storage' and 'get videos'.
 

@@ -58,7 +58,7 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
           "auth": config.video_api_key,
           "resource": {
             "inputUri": videoFilename,
-            "outputUri": "gs://video-json-output/" + fileName.replace(".", "").replace("/", "") + ".json",
+            "outputUri": "gs://" + config.video_json_bucket + "/" + fileName.replace(".", "").replace("/", "") + ".json",
             'features': ['LABEL_DETECTION', 'SHOT_CHANGE_DETECTION']
           }
         }

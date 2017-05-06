@@ -75,11 +75,11 @@ The code for the app is split into frontend and backend repos. Here's what it lo
 1. Copy all of the info your generated service account json file into `frontend/local.json` and `backend/local.json`. 
 1. Copy your generated service account json file into a file called `keyfile.json` and place a copy in both your frontend AND backend directories (you'll deploy these separately, one to App Engine and one to Cloud Functions).
 
-
 #### Deploy 
 1. `cd` into `backend`. 
 1. run `gcloud config set project your-project-id`. 
-1. Deploy the Cloud Function with the following command (replace with the name of your buckets): `gcloud beta functions deploy analyzeVideo --stage-bucket your-stage-bucket-name --trigger-bucket your-video-bucket`
+1. Deploy the Cloud Function:  
+`gcloud beta functions deploy analyzeVideo --stage-bucket your-stage-bucket-name --trigger-bucket your-video-bucket`
 1. With your function deployed, try uploading a video to your video storage bucket. When the Video API finishes processing it, you should see the annotation JSON file in your annotation bucket. To see the video in your UI: navigate to localhost:8080/profile, then click 'clear local storage' and 'get videos'.
 
 ### Deploy the frontend

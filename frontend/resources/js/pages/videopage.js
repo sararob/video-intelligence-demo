@@ -16,7 +16,6 @@ import _ from 'lodash';
 import store from 'store';
 import $ from 'jquery';
 
-import {VIDEO_DATA} from '../constants';
 import VideoCard from '../components/video-card';
 
 class VideoPage {
@@ -29,7 +28,7 @@ class VideoPage {
     this.videoDuration = null;
     this.videos = store.get('videos');
     this.video = _.find(this.videos, {url_safe_id: videoId});
-    this.title = VIDEO_DATA[this.video.url_safe_id] ? VIDEO_DATA[this.video.url_safe_id].title : _.capitalize(this.video.name.replace(/(\-)|(\_)|(\.mov|.mp4|.webm)/gi, ' ').trim());
+    this.title = this.video.url_safe_id;
     this.sortedLabels = this.getSortedLabels(this.video.annotations.label_annotations);
 
     // RENDER PAGE
@@ -251,13 +250,12 @@ class VideoPage {
 
 
   template() {
-    const preview = VIDEO_DATA[this.video.url_safe_id].preview ? `poster="${VIDEO_DATA[this.video.url_safe_id].preview}"` : '';
 
     return `
       <header id="hero" class="hero">
         <div class="l-flex">
           <div class="hero-video col-1 no-margin">
-            <video ${preview} class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
+            <video class="video-card-video" controls="true" id="${this.video.url_safe_id}" src="${this.video.link}"></video>
           </div>
         </div>
 

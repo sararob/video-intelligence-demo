@@ -18,7 +18,7 @@ const config = require('./local.json')
 const storage = require('@google-cloud/storage');
 const storageClient = storage({
   projectId: config.cloud_project_id,
-  keyfileName: "keyfile.json"
+  keyFilename: "keyfile.json"
 });
 
 const allowedFileTypes = ["mp4", "mpeg4", "avi", "webm", "mov", "mpg"];

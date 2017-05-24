@@ -25,7 +25,7 @@ const cors = require('cors');
 const request = require('request');
 const storage = require('@google-cloud/storage');
 const config = require('./local.json');
-const storageClient = storage({projectId: config.cloud_project_id, keyfileName: "keyfile.json"});
+const storageClient = storage({projectId: config.cloud_project_id, keyFilename: "keyfile.json"});
 const app = express();
 const port = normalizePort(process.env.PORT || 3000);
 

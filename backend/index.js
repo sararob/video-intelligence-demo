@@ -46,7 +46,7 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
     if (allowedFileTypes.indexOf(fileType.toLowerCase()) != -1) {
       // it's a video!
       const request = {
-        inputUri: "gs://" + bucketName + '/' + fileName;,
+        inputUri: "gs://" + bucketName + '/' + fileName,
         outputUri: "gs://" + config.video_json_bucket + "/" + fileName.replace(".", "").replace("/", "") + ".json",
         features: ['LABEL_DETECTION', 'SHOT_CHANGE_DETECTION']
       }

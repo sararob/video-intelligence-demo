@@ -3,15 +3,5 @@ node_modules/
 frontend/public/javascripts/*
 frontend/public/stylesheets/*
 frontend/public/javascripts/compiled.js
-
-frontend/local.json
-
-frontend/local.json
-
-backend/local.json
-
-frontend/public/javascripts/compiled.js
-
-backend/keyfile.json
-
-frontend/keyfile.json
+*/local.json
+*/keyfile.json

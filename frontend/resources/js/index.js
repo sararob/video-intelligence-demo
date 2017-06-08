@@ -42,6 +42,8 @@ class App {
     // RENDER LOADING SPINNER
     this.renderLoadingIndicator();
 
+    this.renderPage = this.renderPage.bind(this);
+
     // IF DATA EXISTS RUN APP
     if(videoData) {
       this.initApp();

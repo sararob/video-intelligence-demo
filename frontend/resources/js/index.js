@@ -16,10 +16,10 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import store from 'store'; //https://www.npmjs.com/package/store
-import navigo from 'navigo';
+import Navigo from 'navigo';
 
 // CONSTANTS
-import {VIDEO_API} from './constants';
+import {VIDEO_API, ROOT_URL} from './constants';
 
 // PAGES
 import HomePage from './pages/homepage';
@@ -62,7 +62,7 @@ class App {
   }
 
   initRouter() {
-    this.router = new navigo(null, false);
+    this.router = new Navigo(ROOT_URL, false);
     this.router.updatePageLinks();
 
 

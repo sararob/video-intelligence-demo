@@ -17,7 +17,8 @@ const HOST = `${window.location.protocol}//${window.location.host}`;
 // Use VIDEO_DATA to specify readable titles and thumbnail images for your videos
 const CONSTANTS = {
   VIDEO_API: `${HOST}/api/videos`,
-  AUTH_API: `${HOST}/api/auth`
+  AUTH_API: `${HOST}/api/auth`,
+  ROOT_URL: HOST
 };
 
 export default  CONSTANTS;

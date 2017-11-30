@@ -2,5 +2,5 @@
 	"cloud_project_id": "your-cloud-project",
 	"video_bucket": "your-gcs-video-bucket",
 	"video_json_bucket": "your-gcs-json-output",
-	"video_api_key": "your-video-api-key"
+	"thumbnail_bucket": "your-gcs-thumbnail-bucket"
 }

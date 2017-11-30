@@ -16,28 +16,29 @@ import $ from 'jquery';
 import store from 'store';
 import _ from 'lodash';
 import VideoCard from '../components/video-card';
-
+import idbKeyval from 'idb-keyval';
 
 class SearchPage {
   constructor(stage, router, query) {
     this.$stage = stage;
     this.router = router;
     this.query = query;
-    this.videos = store.get('videos');
-    this.results = this.getSearchResults();
-    this.results = _.sortBy(this.results, ['name']);
-
-
-    this.render();
-    return this;
+    idbKeyval.get('videos').then(val => {
+      this.videos = val;
+      this.results = this.getSearchResults();
+      this.results = _.sortBy(this.results, ['name']);
+      $('.video-card-video').off();
+      this.render();
+      return this;
+    });
   }
 
   getSearchResults() {
     const results = _.filter(this.videos, (video) => {
-      const labels = video.annotations.label_annotations;
+      const labels = video.annotations.shot_label_annotations;
 
       const hasQuery = _.find(labels, (label) => {
-        return _.toLower(label.description) === _.toLower(this.query);
+        return _.toLower(label.entity.description) === _.toLower(this.query);
       });
 
       // CONTAINS QUERY LABEL
@@ -76,6 +77,10 @@ class SearchPage {
   renderGraphs() {
     const that = this;
 
+    $('.video-card-video').each(function() {
+      console.log(this.readyState);
+    });
+
     $('.video-card-video').on('loadedmetadata', function() {
       let isPlaying = false;
 
@@ -99,11 +104,11 @@ class SearchPage {
         }
       });
 
-      const label = _.find(videoData.annotations.label_annotations, (label) => {
-        return _.toLower(label.description) === _.toLower(that.query);
+      const label = _.find(videoData.annotations.shot_label_annotations, (label) => {
+        return _.toLower(label.entity.description) === _.toLower(that.query);
       });
 
-      const timeline = that.renderTimeline(label.locations, duration);
+      const timeline = that.renderTimeline(label.segments, duration);
       // INSERT VIDEO
 
       const $videoContainer = $video.parent().parent().find('.video-card-graph');
@@ -127,12 +132,8 @@ class SearchPage {
     let segments = [];
 
     for (var i = 0; i < locations.length; i++) {
-      let type = locations[i].level;
       let segment = locations[i].segment;
-
-      if(type === 'SHOT_LEVEL') {
-        segments.push(this.createSegment(segment, duration));
-      }
+      segments.push(this.createSegment(segment, duration));
     }
 
     return `<div class="graph">${segments.join('')}</div>`;
@@ -140,10 +141,8 @@ class SearchPage {
 
   createSegment(segment, duration) {
     let segmentEl = '';
-
-
-    const start = segment.start_time_offset ? (segment.start_time_offset / 1000000) : 0;
-    const end = segment.end_time_offset / 1000000;
+    const start = segment.start_time_offset ? (segment.start_time_offset.seconds +  segment.start_time_offset.nanos / 1000000000) : 0;
+    const end = segment.end_time_offset.seconds + segment.end_time_offset.nanos / 1000000000;
 
     const left = (start / duration) * 100;
     const right = 100 - ((end / duration) * 100);

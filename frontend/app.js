@@ -25,7 +25,7 @@ const cors = require('cors');
 const request = require('request');
 const storage = require('@google-cloud/storage');
 const config = require('./local.json');
-const storageClient = storage({projectId: config.cloud_project_id, keyFilename: "keyfile.json"});
+const storageClient = storage({projectId: config.cloud_project_id, keyfileName: config.keyfile_path});
 const app = express();
 const port = normalizePort(process.env.PORT || 3000);
 
@@ -53,7 +53,6 @@ function normalizePort(val) {
 
   return false;
 }
-
 
 /*
 * View Engine
@@ -92,9 +91,10 @@ app.get('/api/videos', (req, res) => {
 
       files.forEach(function(file) {
         const videoAnnotationBucket = storageClient.bucket(config.video_json_bucket);
+        const baseFileName = file.metadata.name.substring(0, file.metadata.name.indexOf('.'));
         const videoAnnotationFilename = (file.metadata.name).replace('/', '').replace('.', '') + '.json';
         const annotationFile = videoAnnotationBucket.file(videoAnnotationFilename);
-
+        
         // GET ANNONATIONS FOR EACH FILE
         annotationFile.get(function(error, fileData) {
           if (error) {
@@ -102,7 +102,6 @@ app.get('/api/videos', (req, res) => {
           }
           else {
             const remoteJsonUrl = fileData.metadata.mediaLink;
-            console.log(fileData.metadata);
 
             request({
               url: remoteJsonUrl,
@@ -114,7 +113,9 @@ app.get('/api/videos', (req, res) => {
                   name: file.metadata.name,
                   link: file.metadata.mediaLink,
                   url_safe_id: (file.metadata.name).replace('/', '-').replace('.','-'),
-                  annotations: body.annotation_results[0]
+                  annotations: body.annotation_results[0],
+                  thumbnail: `https://storage.googleapis.com/${config.thumbnail_bucket}/${baseFileName}.png`,
+                  preview: `https://storage.googleapis.com/${config.thumbnail_bucket}/${baseFileName}-preview.png`
                 });
 
                 // RETURN PAYLOAD

@@ -13,15 +13,12 @@
 // limitations under the License.
 
 import _ from 'lodash';
-import {VIDEO_DATA} from '../constants';
-
-
 
 
 export default function(video, query, expanded) {
-  const title = video.url_safe_id;
-  const tags = video.annotations.label_annotations.map(label => label.description).join(', ');
-
+  const title = video.name;
+  const label_annotations = video.annotations.shot_label_annotations;
+  const tags = video.annotations.shot_label_annotations.map(label => label.entity.description).join(', ');
   // DEFAULT VALUES
   let header = `<h3 class="text-body">${title}</h3>`;
   let selectedTags = tags.length > 90 ? `${tags.substring(0,90)}...` : tags;
@@ -38,7 +35,7 @@ export default function(video, query, expanded) {
   return `
     <a href="/video/${video.url_safe_id}" class="video-card ${isExpanded}" data-navigo>
       <div class="video-card-hero">
-        <video class="video-card-video" preload="metadata" id="${video.url_safe_id}" src="${video.link}"></video>
+        <video class="video-card-video" poster="${video.thumbnail}" preload="metadata" id="${video.url_safe_id}" src="${video.link}"></video>
       </div>
       ${header}
       <div class="video-card-graph"></div>

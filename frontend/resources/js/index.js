@@ -15,8 +15,9 @@
 // DEPENDENCIES
 import $ from 'jquery';
 import _ from 'lodash';
-import store from 'store'; //https://www.npmjs.com/package/store
 import Navigo from 'navigo';
+import idbKeyval from 'idb-keyval';
+
 
 // CONSTANTS
 import {VIDEO_API, ROOT_URL} from './constants';
@@ -27,12 +28,8 @@ import VideoPage from './pages/videopage';
 import SearchPage from './pages/searchpage';
 import ProfilePage from './pages/profilepage';
 
-
 class App {
   constructor() {
-    const videoData = store.enabled ? store.get('videos') : false;
-
-    // REGISTER ELEMENTS
     this.$stage = $('#stage');
     this.$topnav = $('#top-nav');
     this.$search = $('#search');
@@ -42,16 +39,56 @@ class App {
     // RENDER LOADING SPINNER
     this.renderLoadingIndicator();
 
-    this.renderPage = this.renderPage.bind(this);
+    idbKeyval.get('videos')
+    .then((data) => {
+      // IF DATA EXISTS RUN APP
+      if(typeof data != 'undefined') {
+        this.initApp();
+      }
+      // OTHERWISE FETCH VIDEO DATA
+      else {
+        return Promise.resolve()
+          .then(() => {
+            const that = this;
 
-    // IF DATA EXISTS RUN APP
-    if(videoData) {
-      this.initApp();
-    }
-    // OTHERWISE FETCH VIDEO DATA
-    else {
-      this.getVideoData();
-    }
+            return $.ajax({
+              url: VIDEO_API,
+
+              beforeSend() {
+                $('#status').text('Loading video library...');
+              },
+
+              complete() {
+                $('#status').text('');
+              },
+
+              success(msg, status, xhr) {
+                const videos = xhr.responseJSON;
+                const sortedVideos = _.sortBy(videos, ['name']);
+                idbKeyval.set('videos', sortedVideos)
+                  .then(() => {
+                    console.log('got videos');
+                    that.initApp();
+                  })
+                  .catch(err => console.log('getting vids failed', err));
+
+
+                this.initApp();
+              }
+            });
+
+          }).then(() => {
+            return idbKeyval.get('videos');    
+          }).then((videos) => {
+              const videoCards = videos.map((video) => VideoCard(video)).join('');
+              this.$stage.html(this.template(videoCards));
+          })
+          .catch((err) => {
+            console.log('error', err);
+          });
+      }        
+    });
+
   }
 
   renderLoadingIndicator() {
@@ -109,7 +146,7 @@ class App {
 
   activateSearchBar() {
     this.$search.keypress((e) => {
-      if(e.which == 13){//Enter key pressed
+      if(e.which == 13){
         const query = this.$search.val();
         this.$search.blur();
         this.router.navigate(`/search/${query}`);
@@ -134,16 +171,12 @@ class App {
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
         const sortedVideos = _.sortBy(videos, ['name']);
-
-        // STORE VIDEO DATA
-        if(store.enabled) {
-          store.set('videos', sortedVideos);
-        }
-        else {
-          this.videoStore = sortedVideos;
-        }
-
-        that.initApp();
+        idbKeyval.set('videos', sortedVideos)
+          .then(() => {
+            console.log('It worked here!');
+            that.initApp();
+          })
+          .catch(err => console.log('It failed!', err));
       }
     });
   }

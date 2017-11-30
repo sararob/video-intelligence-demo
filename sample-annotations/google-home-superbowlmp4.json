@@ -1,0 +1,1970 @@
+{
+  "annotation_results": [ {
+    "input_uri": "/ga-demo-videos/google-home-superbowl.mp4",
+    "segment_label_annotations": [ ],
+    "shot_label_annotations": [ {
+      "entity": {
+        "entity_id": "/m/0k65p",
+        "description": "hand",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 24,
+            "nanos": 145910000
+          },
+          "end_time_offset": {
+            "seconds": 25,
+            "nanos": 230154000
+          }
+        },
+        "confidence": 0.42067605
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 33,
+            "nanos": 490870000
+          },
+          "end_time_offset": {
+            "seconds": 34,
+            "nanos": 282572000
+          }
+        },
+        "confidence": 0.40704
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0jffp",
+        "description": "dinner",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0krfg",
+        "description": "meal",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 34,
+            "nanos": 333726000
+          },
+          "end_time_offset": {
+            "seconds": 35,
+            "nanos": 366816000
+          }
+        },
+        "confidence": 0.53440434
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/021sdg",
+        "description": "graphics",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0dgsmq8",
+        "description": "artwork",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 58,
+            "nanos": 50016000
+          },
+          "end_time_offset": {
+            "seconds": 60,
+            "nanos": 11886000
+          }
+        },
+        "confidence": 0.69089627
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/023bbt",
+        "description": "wilderness",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.81817877
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0gzt5",
+        "description": "hound",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0bt9lr",
+        "description": "dog",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 7,
+            "nanos": 90548000
+          },
+          "end_time_offset": {
+            "seconds": 8,
+            "nanos": 759876000
+          }
+        },
+        "confidence": 0.55008912
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01f5gx",
+        "description": "eating",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 34,
+            "nanos": 333726000
+          },
+          "end_time_offset": {
+            "seconds": 35,
+            "nanos": 366816000
+          }
+        },
+        "confidence": 0.78170937
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/06gfj",
+        "description": "road",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.53264624
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/068hy",
+        "description": "pet",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0jbk",
+        "description": "animal",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 7,
+            "nanos": 90548000
+          },
+          "end_time_offset": {
+            "seconds": 8,
+            "nanos": 759876000
+          }
+        },
+        "confidence": 0.96020436
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/020wcz",
+        "description": "mountain pass",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 1
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0btp2",
+        "description": "traffic",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.8164255
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/06hyd",
+        "description": "roof",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 1,
+            "nanos": 910716000
+          },
+          "end_time_offset": {
+            "seconds": 3,
+            "nanos": 717122000
+          }
+        },
+        "confidence": 0.52422309
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/09d_r",
+        "description": "mountain",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.91907662
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0cgh4",
+        "description": "building",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 1,
+            "nanos": 910716000
+          },
+          "end_time_offset": {
+            "seconds": 3,
+            "nanos": 717122000
+          }
+        },
+        "confidence": 0.42035094
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02wzbmj",
+        "description": "standing",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 10,
+            "nanos": 928364000
+          },
+          "end_time_offset": {
+            "seconds": 12,
+            "nanos": 769540000
+          }
+        },
+        "confidence": 0.4038386
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 19,
+            "nanos": 929628000
+          },
+          "end_time_offset": {
+            "seconds": 20,
+            "nanos": 979102000
+          }
+        },
+        "confidence": 0.55813909
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0j_s4",
+        "description": "metropolitan area",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01n32",
+        "description": "city",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.43398437
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01l0mw",
+        "description": "home",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0cgh4",
+        "description": "building",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 1,
+            "nanos": 910716000
+          },
+          "end_time_offset": {
+            "seconds": 3,
+            "nanos": 717122000
+          }
+        },
+        "confidence": 0.61887962
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/015c4z",
+        "description": "sitting",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 28,
+            "nanos": 619964000
+          },
+          "end_time_offset": {
+            "seconds": 30,
+            "nanos": 238138000
+          }
+        },
+        "confidence": 0.46827742
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 36,
+            "nanos": 794756000
+          },
+          "end_time_offset": {
+            "seconds": 39,
+            "nanos": 754946000
+          }
+        },
+        "confidence": 0.85474896
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/09g5pq",
+        "description": "people",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 36,
+            "nanos": 794756000
+          },
+          "end_time_offset": {
+            "seconds": 39,
+            "nanos": 754946000
+          }
+        },
+        "confidence": 0.50949746
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0fszt",
+        "description": "cake",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0270h",
+        "description": "dessert",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.86632717
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/04k94",
+        "description": "liquid",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 17,
+            "nanos": 227210000
+          },
+          "end_time_offset": {
+            "seconds": 18,
+            "nanos": 225530000
+          }
+        },
+        "confidence": 0.5138889
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 41,
+            "nanos": 166502000
+          },
+          "end_time_offset": {
+            "seconds": 42,
+            "nanos": 78898000
+          }
+        },
+        "confidence": 0.5138889
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0krfg",
+        "description": "meal",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 34,
+            "nanos": 333726000
+          },
+          "end_time_offset": {
+            "seconds": 35,
+            "nanos": 366816000
+          }
+        },
+        "confidence": 0.75369269
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01d74z",
+        "description": "night",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.74856758
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 5,
+            "nanos": 214602000
+          },
+          "end_time_offset": {
+            "seconds": 7,
+            "nanos": 55778000
+          }
+        },
+        "confidence": 0.52206534
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02qm2x",
+        "description": "icing",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0270h",
+        "description": "dessert",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.85063642
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/03cjrt",
+        "description": "highland",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.65080911
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/017lm",
+        "description": "bluetooth",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 54,
+            "nanos": 934362000
+          },
+          "end_time_offset": {
+            "seconds": 58,
+            "nanos": 15246000
+          }
+        },
+        "confidence": 0.60000002
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02wbm",
+        "description": "food",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 34,
+            "nanos": 333726000
+          },
+          "end_time_offset": {
+            "seconds": 35,
+            "nanos": 366816000
+          }
+        },
+        "confidence": 0.81014597
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.56513536
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/04_5sg",
+        "description": "hill",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.79020846
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0jbk",
+        "description": "animal",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 7,
+            "nanos": 90548000
+          },
+          "end_time_offset": {
+            "seconds": 8,
+            "nanos": 759876000
+          }
+        },
+        "confidence": 0.9420619
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 25,
+            "nanos": 281308000
+          },
+          "end_time_offset": {
+            "seconds": 27,
+            "nanos": 192024000
+          }
+        },
+        "confidence": 0.75782752
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02zr8",
+        "description": "forest",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.55968755
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01ckgp",
+        "description": "interaction",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 10,
+            "nanos": 928364000
+          },
+          "end_time_offset": {
+            "seconds": 12,
+            "nanos": 769540000
+          }
+        },
+        "confidence": 0.58498126
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 27,
+            "nanos": 243178000
+          },
+          "end_time_offset": {
+            "seconds": 28,
+            "nanos": 568810000
+          }
+        },
+        "confidence": 0.57368708
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0dgw9r",
+        "description": "human",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 10,
+            "nanos": 928364000
+          },
+          "end_time_offset": {
+            "seconds": 12,
+            "nanos": 769540000
+          }
+        },
+        "confidence": 0.84600687
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 15,
+            "nanos": 729730000
+          },
+          "end_time_offset": {
+            "seconds": 17,
+            "nanos": 176056000
+          }
+        },
+        "confidence": 0.92189527
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 28,
+            "nanos": 619964000
+          },
+          "end_time_offset": {
+            "seconds": 30,
+            "nanos": 238138000
+          }
+        },
+        "confidence": 0.81081998
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 33,
+            "nanos": 490870000
+          },
+          "end_time_offset": {
+            "seconds": 34,
+            "nanos": 282572000
+          }
+        },
+        "confidence": 0.92518806
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 36,
+            "nanos": 794756000
+          },
+          "end_time_offset": {
+            "seconds": 39,
+            "nanos": 754946000
+          }
+        },
+        "confidence": 0.62840533
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 45,
+            "nanos": 90242000
+          },
+          "end_time_offset": {
+            "seconds": 46,
+            "nanos": 915034000
+          }
+        },
+        "confidence": 0.87584853
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/052lwg6",
+        "description": "baked goods",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/02wbm",
+        "description": "food",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.42222223
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0270h",
+        "description": "dessert",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/02wbm",
+        "description": "food",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.7234928
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/05h0n",
+        "description": "nature",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.69435585
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/03h_4m",
+        "description": "cylinder",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/016nqd",
+        "description": "shape",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 35,
+            "nanos": 417970000
+          },
+          "end_time_offset": {
+            "seconds": 36,
+            "nanos": 743602000
+          }
+        },
+        "confidence": 0.42222223
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 42,
+            "nanos": 130052000
+          },
+          "end_time_offset": {
+            "seconds": 43,
+            "nanos": 300220000
+          }
+        },
+        "confidence": 0.60000002
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0bt9lr",
+        "description": "dog",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/068hy",
+        "description": "pet",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 7,
+            "nanos": 90548000
+          },
+          "end_time_offset": {
+            "seconds": 8,
+            "nanos": 759876000
+          }
+        },
+        "confidence": 0.99167299
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/027_ny3",
+        "description": "still life photography",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/05wkw",
+        "description": "photography",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 41,
+            "nanos": 166502000
+          },
+          "end_time_offset": {
+            "seconds": 42,
+            "nanos": 78898000
+          }
+        },
+        "confidence": 0.71532059
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02czv8",
+        "description": "birthday cake",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0fszt",
+        "description": "cake",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.91286969
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01j48b",
+        "description": "wrist",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0k65p",
+        "description": "hand",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 24,
+            "nanos": 145910000
+          },
+          "end_time_offset": {
+            "seconds": 25,
+            "nanos": 230154000
+          }
+        },
+        "confidence": 0.41237983
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0dtln",
+        "description": "lamp",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/019sc6",
+        "description": "lighting",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 41,
+            "nanos": 166502000
+          },
+          "end_time_offset": {
+            "seconds": 42,
+            "nanos": 78898000
+          }
+        },
+        "confidence": 0.4865672
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01h8n0",
+        "description": "conversation",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01lhf",
+        "description": "communication",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 30,
+            "nanos": 272908000
+          },
+          "end_time_offset": {
+            "seconds": 31,
+            "nanos": 872696000
+          }
+        },
+        "confidence": 0.44532457
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 36,
+            "nanos": 794756000
+          },
+          "end_time_offset": {
+            "seconds": 39,
+            "nanos": 754946000
+          }
+        },
+        "confidence": 0.45938098
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0355cw",
+        "description": "ridge",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/09d_r",
+        "description": "mountain",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.47861516
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0dwx7",
+        "description": "logo",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/021sdg",
+        "description": "graphics",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 58,
+            "nanos": 50016000
+          },
+          "end_time_offset": {
+            "seconds": 60,
+            "nanos": 11886000
+          }
+        },
+        "confidence": 0.69344133
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/03jm5",
+        "description": "house",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/0cgh4",
+        "description": "building",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 1,
+            "nanos": 910716000
+          },
+          "end_time_offset": {
+            "seconds": 3,
+            "nanos": 717122000
+          }
+        },
+        "confidence": 0.75930876
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01vkl",
+        "description": "circle",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/016nqd",
+        "description": "shape",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 58,
+            "nanos": 50016000
+          },
+          "end_time_offset": {
+            "seconds": 60,
+            "nanos": 11886000
+          }
+        },
+        "confidence": 0.40749347
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0d4v4",
+        "description": "window",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 14,
+            "nanos": 645486000
+          },
+          "end_time_offset": {
+            "seconds": 15,
+            "nanos": 678576000
+          }
+        },
+        "confidence": 0.72154874
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02r_57s",
+        "description": "cake decorating",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.59053046
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01kcnl",
+        "description": "birthday",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/05_4_",
+        "description": "party",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 46,
+            "nanos": 966188000
+          },
+          "end_time_offset": {
+            "seconds": 48,
+            "nanos": 222280000
+          }
+        },
+        "confidence": 0.63407308
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/07s6nbt",
+        "description": "text",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 51,
+            "nanos": 923018000
+          },
+          "end_time_offset": {
+            "seconds": 54,
+            "nanos": 883208000
+          }
+        },
+        "confidence": 0.46047577
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/0k4j",
+        "description": "car",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/07yv9",
+        "description": "vehicle",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.91671175
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/01spzs",
+        "description": "still life",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/05qdh",
+        "description": "painting",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 41,
+            "nanos": 166502000
+          },
+          "end_time_offset": {
+            "seconds": 42,
+            "nanos": 78898000
+          }
+        },
+        "confidence": 0.67968625
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/07yv9",
+        "description": "vehicle",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.84285784
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 8,
+            "nanos": 794646000
+          },
+          "end_time_offset": {
+            "seconds": 10,
+            "nanos": 893594000
+          }
+        },
+        "confidence": 0.45896822
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/02dgv",
+        "description": "door",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 12,
+            "nanos": 804310000
+          },
+          "end_time_offset": {
+            "seconds": 13,
+            "nanos": 716706000
+          }
+        },
+        "confidence": 0.80578285
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 14,
+            "nanos": 645486000
+          },
+          "end_time_offset": {
+            "seconds": 15,
+            "nanos": 678576000
+          }
+        },
+        "confidence": 0.42853326
+      }, {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 19,
+            "nanos": 137926000
+          },
+          "end_time_offset": {
+            "seconds": 19,
+            "nanos": 894858000
+          }
+        },
+        "confidence": 0.51979679
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/012f08",
+        "description": "motor vehicle",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/07yv9",
+        "description": "vehicle",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 3,
+            "nanos": 751892000
+          },
+          "end_time_offset": {
+            "seconds": 5,
+            "nanos": 179832000
+          }
+        },
+        "confidence": 0.5493055
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/019nj4",
+        "description": "smile",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/01g317",
+        "description": "person",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 36,
+            "nanos": 794756000
+          },
+          "end_time_offset": {
+            "seconds": 39,
+            "nanos": 754946000
+          }
+        },
+        "confidence": 0.41760856
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/07yxk",
+        "description": "valley",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.8856957
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/04wxr",
+        "description": "mountain range",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/043rvww",
+        "description": "geographical feature",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+          
+          },
+          "end_time_offset": {
+            "seconds": 1,
+            "nanos": 875946000
+          }
+        },
+        "confidence": 0.70360106
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/019sc6",
+        "description": "lighting",
+        "language_code": "en-US"
+      },
+      "category_entities": [ ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 41,
+            "nanos": 166502000
+          },
+          "end_time_offset": {
+            "seconds": 42,
+            "nanos": 78898000
+          }
+        },
+        "confidence": 0.42972791
+      } ],
+      "frames": [ ]
+    }, {
+      "entity": {
+        "entity_id": "/m/08t0vy",
+        "description": "individual sports",
+        "language_code": "en-US"
+      },
+      "category_entities": [ {
+        "entity_id": "/m/06ntj",
+        "description": "sports",
+        "language_code": "en-US"
+      } ],
+      "segments": [ {
+        "segment": {
+          "start_time_offset": {
+            "seconds": 24,
+            "nanos": 145910000
+          },
+          "end_time_offset": {
+            "seconds": 25,
+            "nanos": 230154000
+          }
+        },
+        "confidence": 0.40062076
+      } ],
+      "frames": [ ]
+    } ],
+    "frame_label_annotations": [ ],
+    "face_annotations": [ ],
+    "shot_annotations": [ {
+      "start_time_offset": {
+      
+      },
+      "end_time_offset": {
+        "seconds": 1,
+        "nanos": 875946000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 1,
+        "nanos": 910716000
+      },
+      "end_time_offset": {
+        "seconds": 3,
+        "nanos": 717122000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 3,
+        "nanos": 751892000
+      },
+      "end_time_offset": {
+        "seconds": 5,
+        "nanos": 179832000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 5,
+        "nanos": 214602000
+      },
+      "end_time_offset": {
+        "seconds": 7,
+        "nanos": 55778000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 7,
+        "nanos": 90548000
+      },
+      "end_time_offset": {
+        "seconds": 8,
+        "nanos": 759876000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 8,
+        "nanos": 794646000
+      },
+      "end_time_offset": {
+        "seconds": 10,
+        "nanos": 893594000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 10,
+        "nanos": 928364000
+      },
+      "end_time_offset": {
+        "seconds": 12,
+        "nanos": 769540000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 12,
+        "nanos": 804310000
+      },
+      "end_time_offset": {
+        "seconds": 13,
+        "nanos": 716706000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 13,
+        "nanos": 767860000
+      },
+      "end_time_offset": {
+        "seconds": 14,
+        "nanos": 594332000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 14,
+        "nanos": 645486000
+      },
+      "end_time_offset": {
+        "seconds": 15,
+        "nanos": 678576000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 15,
+        "nanos": 729730000
+      },
+      "end_time_offset": {
+        "seconds": 17,
+        "nanos": 176056000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 17,
+        "nanos": 227210000
+      },
+      "end_time_offset": {
+        "seconds": 18,
+        "nanos": 225530000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 18,
+        "nanos": 260300000
+      },
+      "end_time_offset": {
+        "seconds": 19,
+        "nanos": 103156000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 19,
+        "nanos": 137926000
+      },
+      "end_time_offset": {
+        "seconds": 19,
+        "nanos": 894858000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 19,
+        "nanos": 929628000
+      },
+      "end_time_offset": {
+        "seconds": 20,
+        "nanos": 979102000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 21,
+        "nanos": 13872000
+      },
+      "end_time_offset": {
+        "seconds": 22,
+        "nanos": 321118000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 22,
+        "nanos": 355888000
+      },
+      "end_time_offset": {
+        "seconds": 24,
+        "nanos": 111140000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 24,
+        "nanos": 145910000
+      },
+      "end_time_offset": {
+        "seconds": 25,
+        "nanos": 230154000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 25,
+        "nanos": 281308000
+      },
+      "end_time_offset": {
+        "seconds": 27,
+        "nanos": 192024000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 27,
+        "nanos": 243178000
+      },
+      "end_time_offset": {
+        "seconds": 28,
+        "nanos": 568810000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 28,
+        "nanos": 619964000
+      },
+      "end_time_offset": {
+        "seconds": 30,
+        "nanos": 238138000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 30,
+        "nanos": 272908000
+      },
+      "end_time_offset": {
+        "seconds": 31,
+        "nanos": 872696000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 31,
+        "nanos": 907466000
+      },
+      "end_time_offset": {
+        "seconds": 33,
+        "nanos": 456100000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 33,
+        "nanos": 490870000
+      },
+      "end_time_offset": {
+        "seconds": 34,
+        "nanos": 282572000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 34,
+        "nanos": 333726000
+      },
+      "end_time_offset": {
+        "seconds": 35,
+        "nanos": 366816000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 35,
+        "nanos": 417970000
+      },
+      "end_time_offset": {
+        "seconds": 36,
+        "nanos": 743602000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 36,
+        "nanos": 794756000
+      },
+      "end_time_offset": {
+        "seconds": 39,
+        "nanos": 754946000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 39,
+        "nanos": 789716000
+      },
+      "end_time_offset": {
+        "seconds": 41,
+        "nanos": 131732000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 41,
+        "nanos": 166502000
+      },
+      "end_time_offset": {
+        "seconds": 42,
+        "nanos": 78898000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 42,
+        "nanos": 130052000
+      },
+      "end_time_offset": {
+        "seconds": 43,
+        "nanos": 300220000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 43,
+        "nanos": 334990000
+      },
+      "end_time_offset": {
+        "seconds": 45,
+        "nanos": 39088000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 45,
+        "nanos": 90242000
+      },
+      "end_time_offset": {
+        "seconds": 46,
+        "nanos": 915034000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 46,
+        "nanos": 966188000
+      },
+      "end_time_offset": {
+        "seconds": 48,
+        "nanos": 222280000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 48,
+        "nanos": 257050000
+      },
+      "end_time_offset": {
+        "seconds": 51,
+        "nanos": 888248000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 51,
+        "nanos": 923018000
+      },
+      "end_time_offset": {
+        "seconds": 54,
+        "nanos": 883208000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 54,
+        "nanos": 934362000
+      },
+      "end_time_offset": {
+        "seconds": 58,
+        "nanos": 15246000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 58,
+        "nanos": 50016000
+      },
+      "end_time_offset": {
+        "seconds": 60,
+        "nanos": 11886000
+      }
+    }, {
+      "start_time_offset": {
+        "seconds": 60,
+        "nanos": 63040000
+      },
+      "end_time_offset": {
+        "seconds": 60,
+        "nanos": 63040000
+      }
+    } ],
+    "segment": {
+      "start_time_offset": {
+      
+      },
+      "end_time_offset": {
+        "seconds": 60,
+        "nanos": 63040000
+      }
+    },
+    "speech_transcriptions": [ ],
+    "text_annotations": [ ]
+  } ]
+}

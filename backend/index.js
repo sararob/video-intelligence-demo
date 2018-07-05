@@ -71,10 +71,14 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
         const fileName = file.name;
         const fileType = fileName.split('.').pop();
 
+        const inputUri = "gs://" + bucketName + '/' + fileName;
+        const outFile = fileName.replace(".", "").replace("/", "").replace(",", "") + ".json";
+        const outputUri = "gs://" + config.video_json_bucket + "/" + fileName;
+
         if (allowedFileTypes.indexOf(fileType.toLowerCase()) != -1) {
             const request = {
-                inputUri: "gs://" + bucketName + '/' + fileName,
-                outputUri: "gs://ga-demo-json/" + fileName.replace(".", "").replace("/", "") + ".json",
+                inputUri: inputUri,
+                outputUri: outputUri,
                 features: ['LABEL_DETECTION', 'SHOT_CHANGE_DETECTION']
             }
 
@@ -86,7 +90,14 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
             })
             .then(results => {
                 const annotations = results[0].annotationResults[0];
-                console.log('got annotations', annotations);
+                const jj = JSON.stringify(annotations);
+                console.log('got annotations', jj);
+                const outputBucketFile = storage
+                    .bucket(config.video_json_bucket)
+                    .file(outFile);
+                outputBucketFile.save(jj, function(err) {
+                  if (err) { console.log("video intelligence json error: "+outputUri);console.log(err); }
+                });
             })
             .catch(err => {
                 console.error('Error getting video annotations: ', err);

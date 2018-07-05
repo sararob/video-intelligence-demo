@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^0.6.1",
-    "@google-cloud/video-intelligence": "^0.1.0"
+    "@google-cloud/video-intelligence": "git+https://git@github.com/googleapis/nodejs-video-intelligence.git",
+    "fluent-ffmpeg": "",
+    "rimraf": ""
   }
 }

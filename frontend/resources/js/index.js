@@ -16,7 +16,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import Navigo from 'navigo';
-import idbKeyval from 'idb-keyval';
+import {get,set} from 'idb-keyval';
 
 
 // CONSTANTS
@@ -38,12 +38,13 @@ class App {
 
     // RENDER LOADING SPINNER
     this.renderLoadingIndicator();
-
-    idbKeyval.get('videos')
+    const appThis = this;
+//console.log(idbKeyval);
+    get('videos')
     .then((data) => {
       // IF DATA EXISTS RUN APP
       if(typeof data != 'undefined') {
-        this.initApp();
+        appThis.initApp();
       }
       // OTHERWISE FETCH VIDEO DATA
       else {
@@ -64,8 +65,10 @@ class App {
 
               success(msg, status, xhr) {
                 const videos = xhr.responseJSON;
+                console.log(videos);
                 const sortedVideos = _.sortBy(videos, ['name']);
-                idbKeyval.set('videos', sortedVideos)
+
+                set('videos', sortedVideos)
                   .then(() => {
                     console.log('got videos');
                     that.initApp();
@@ -73,12 +76,12 @@ class App {
                   .catch(err => console.log('getting vids failed', err));
 
 
-                this.initApp();
+                appThis.initApp();
               }
             });
 
           }).then(() => {
-            return idbKeyval.get('videos');    
+            return get('videos');    
           }).then((videos) => {
               const videoCards = videos.map((video) => VideoCard(video)).join('');
               this.$stage.html(this.template(videoCards));
@@ -171,7 +174,7 @@ class App {
       success(msg, status, xhr) {
         const videos = xhr.responseJSON;
         const sortedVideos = _.sortBy(videos, ['name']);
-        idbKeyval.set('videos', sortedVideos)
+        store.set('videos', sortedVideos)
           .then(() => {
             console.log('It worked here!');
             that.initApp();

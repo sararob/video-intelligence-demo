@@ -16,6 +16,7 @@ import _ from 'lodash';
 
 
 export default function(video, query, expanded) {
+    //console.log(video);
   const title = video.name;
   const label_annotations = video.annotations.shot_label_annotations;
   const tags = video.annotations.shot_label_annotations.map(label => label.entity.description).join(', ');

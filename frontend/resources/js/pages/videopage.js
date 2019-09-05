@@ -15,7 +15,7 @@
 import _ from 'lodash';
 import store from 'store';
 import $ from 'jquery';
-import idbKeyval from 'idb-keyval';
+import {get} from 'idb-keyval';
 
 import VideoCard from '../components/video-card';
 
@@ -27,7 +27,7 @@ class VideoPage {
     this.videoId = videoId;
     this.videoLength = '';
     this.videoDuration = null;
-    this.videos = idbKeyval.get('videos').then((data) => {
+    this.videos = get('videos').then((data) => {
       this.videos = data;
       this.video = _.find(this.videos, {url_safe_id: videoId});
       this.title = this.video.name;

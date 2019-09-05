@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import store from 'store';
-
+import {get,set} from 'idb-keyval';
 import VideoCard from '../components/video-card';
 
 class HomePage {
@@ -39,10 +39,12 @@ class HomePage {
   }
 
   render() {
-    const videos = store.get('videos');
-    const videoCards = videos.map((video) => VideoCard(video)).join('');
+    const videos = get('videos')
+    .then((data) => {
+        const videoCards = data.map((data) => VideoCard(data)).join('');
+        this.$stage.html(this.template(videoCards));
+    });
 
-    this.$stage.html(this.template(videoCards));
   }
 }
 

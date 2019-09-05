@@ -21,9 +21,9 @@ const storage = new Storage({
 const video = require('@google-cloud/video-intelligence');
 const client = new video.VideoIntelligenceServiceClient({
     projectId: config.cloud_project_id,
-    keyfileName: './keyfile.json'
+    keyFilename: './keyfile.json'
 });
-
+console.log(client);
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
 const binPath = path.resolve(__dirname, 'ffmpeg');
@@ -56,31 +56,32 @@ function downloadFile(file, fileName) {
     });
 }
 
-exports.analyzeVideo = function analyzeVideo (event, callback) {
+exports.analyzeVideo = (data, context) => {
     
     const allowedFileTypes = ["mp4", "mpeg4", "avi", "webm", "mov", "mpg"];
 
-    const file = event.data;
+    const file = data.name;
     const isDelete = file.resourceState === 'not_exists';
 
     if (isDelete) {
      console.log(`File ${file.name} deleted.`);
     } else {
-        const bucketName = file.bucket;
+        const bucketName = data.bucket;
         console.log('fileinfo: ',file);
-        const fileName = file.name;
+        const fileName = file;
         const fileType = fileName.split('.').pop();
 
         if (allowedFileTypes.indexOf(fileType.toLowerCase()) != -1) {
             const request = {
-                inputUri: "gs://" + bucketName + '/' + fileName,
+                inputUri: "gs://"+bucketName+"/" + fileName,
                 outputUri: "gs://ga-demo-json/" + fileName.replace(".", "").replace("/", "") + ".json",
                 features: ['LABEL_DETECTION', 'SHOT_CHANGE_DETECTION']
             }
-
+			console.log(request);
             client.annotateVideo(request)
                 .then(results => {
                     const operation = results[0];
+                    console.log(operation);
                     console.log('waiting for annotations');
                     return operation.promise();
             })
@@ -97,14 +98,14 @@ exports.analyzeVideo = function analyzeVideo (event, callback) {
         }
 
     }
-    callback();
+    //callback();
 }
 
-exports.generateThumbnail = function generateThumbnail (event) {
+exports.generateThumbnail = (data, context) => {
     return Promise.resolve()
       .then(() => {
         rimraf('/tmp', function() { console.log('deleted tmp/') });
-        const file = event.data;
+        const file = data.name;
         const isDelete = file.resourceState === 'not_exists';
         console.log(event, file);
 
@@ -113,7 +114,7 @@ exports.generateThumbnail = function generateThumbnail (event) {
             return true;
         } else {
             
-            const fileName = file.name;
+            const fileName = file;
             const videoFile = videoBucket.file(fileName);
             console.log('downloading file...')
             return downloadFile(videoFile, fileName);
@@ -164,20 +165,20 @@ exports.generateThumbnail = function generateThumbnail (event) {
       });
 }
 
-exports.generatePreview = function generatePreview(event) {
+exports.generatePreview = (data, context) => {
     return Promise.resolve()
       .then(() => {
         rimraf('/tmp', function() { console.log('deleted tmp/') });
-        const file = event.data;
+        const file = data.name;
         const isDelete = file.resourceState === 'not_exists';
-        console.log(event, file);
+        console.log(data, file);
 
         if (isDelete) {
             console.log('deleting file');
             return true;
         } else {
             
-            const fileName = file.name;
+            const fileName = file;
             const videoFile = videoBucket.file(fileName);
             console.log('downloading file...')
             return downloadFile(videoFile, fileName);
@@ -186,7 +187,7 @@ exports.generatePreview = function generatePreview(event) {
         const fileName = fileinfo;
         console.log(fileName);
 
-        let pngFilepath = fileName.substr(5, event.data.name.lastIndexOf('.')).replace(".", "").replace("/", "") + '-preview.png';
+        let pngFilepath = fileName.substr(5, data.name.lastIndexOf('.')).replace(".", "").replace("/", "") + '-preview.png';
 
         return new Promise((resolve, reject) => {
             ffmpeg(fileName)

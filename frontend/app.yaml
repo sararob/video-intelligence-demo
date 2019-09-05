@@ -14,6 +14,17 @@
 # [START app_yaml]
 runtime: nodejs
 env: flex
+#default_expiration: "1d 5h"
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10
+
+automatic_scaling:
+  max_num_instances: 1
+  cool_down_period_sec: 120
+  cpu_utilization:
+    target_utilization: 0.8
 skip_files:
 - node_modules/
 # [END app_yaml]
